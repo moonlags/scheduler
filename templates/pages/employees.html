@@ -1,0 +1,19 @@
+{{define "content"}}
+<h1 class="title">Employees</h1>
+
+<form hx-post="/employees" hx-target="#employee-list" hx-swap="beforeend">
+    <input class="input" type="text" name="name" placeholder="Name" required>
+    <div class="select">
+        <select class="select" name="rate">
+            <option value="Full">Full</option>
+            <option value="2/3">2/3</option>
+            <option value="1/2">1/2</option>
+        </select>
+    </div>
+    <button class="button is-primary" type="submit">Add</button>
+</form>
+
+<div id="employee-list">
+    {{range .}}{{template "employee_row.html" .}}{{end}}
+</div>
+{{end}}

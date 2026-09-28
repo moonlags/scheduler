@@ -1,0 +1,9 @@
+{{define "employee_row.html"}}
+<div id="employee-{{.ID}}" class="box">
+    {{.Name}} ({{.Rate}})
+    <button class="button is-small is-danger"
+            hx-delete="/employees/{{.ID}}"
+            hx-target="#employee-{{.ID}}"
+            hx-swap="outerHTML">Delete</button>
+</div>
+{{end}}
