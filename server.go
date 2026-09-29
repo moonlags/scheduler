@@ -73,6 +73,11 @@ func (s *Server) routes() {
 
 	s.mux.Get("/", s.handleIndex)
 
+	s.mux.Get("/login", s.handleLoginPage)
+	s.mux.Post("/login", s.handleLogin)
+	s.mux.Get("/register", s.handleRegisterPage)
+	s.mux.Post("/register", s.handleRegister)
+
 	s.mux.Get("/employees", s.handleEmployeesPage)
 	s.mux.Post("/employees", s.handleEmployeeCreate)
 	s.mux.Delete("/employees/{id}", s.handleEmployeeDelete)
