@@ -17,19 +17,18 @@ import (
 )
 
 type Server struct {
+	cfg   Config
 	mux   *chi.Mux
 	db    *sqlx.DB
 	pages map[string]*template.Template
 	frags *template.Template
 }
 
-func newServer(db *sqlx.DB) (*Server, error) {
+func newServer(cfg Config, db *sqlx.DB) (*Server, error) {
 	server := &Server{
 		mux: chi.NewRouter(),
 		db:  db,
 	}
-	server.loadTemplates(os.DirFS("."))
-	server.routes()
 
 	return server, nil
 }
@@ -37,7 +36,28 @@ func newServer(db *sqlx.DB) (*Server, error) {
 func (s *Server) run(addr string) error {
 	log.Printf("running on address %s\n", addr)
 
+	go func() {
+		t := time.NewTicker(time.Hour)
+		defer t.Stop()
+		for range t.C {
+			if err := s.purgeExpiredSessions(); err != nil {
+				log.Println("session purge:", err)
+			}
+		}
+	}()
+
+	s.loadTemplates(os.DirFS("."))
+	s.routes()
+	s.initAdmin()
+
 	return http.ListenAndServe(addr, s.mux)
+}
+
+func (s *Server) initAdmin() {
+	if _, err := s.db.Exec("INSERT INTO users (id, name, email, password, profile_picture, is_admin) VALUES (?, ?, ?, ?, 'default', TRUE) ON CONFLICT (id) DO NOTHING",
+		"1", "admin", s.cfg.adminEmail, s.cfg.adminPassword); err != nil {
+		panic(fmt.Sprintf("init admin: %v", err))
+	}
 }
 
 func (s *Server) loadTemplates(fsys fs.FS) {
@@ -67,20 +87,40 @@ func (s *Server) routes() {
 	}))
 	s.mux.Use(middleware.Logger)
 	s.mux.Use(middleware.Recoverer)
-	s.mux.Use(func(next http.Handler) http.Handler { return cop.Handler(next)})
+	s.mux.Use(func(next http.Handler) http.Handler { return cop.Handler(next) })
+	s.mux.Use(s.withUser)
 
 	s.mux.Handle("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
-	s.mux.Get("/", s.handleIndex)
+	s.mux.Get("/", s.handleIndexPage)
 
 	s.mux.Get("/login", s.handleLoginPage)
 	s.mux.Post("/login", s.handleLogin)
-	s.mux.Get("/register", s.handleRegisterPage)
-	s.mux.Post("/register", s.handleRegister)
 
-	s.mux.Get("/employees", s.handleEmployeesPage)
-	s.mux.Post("/employees", s.handleEmployeeCreate)
-	s.mux.Delete("/employees/{id}", s.handleEmployeeDelete)
+	s.mux.Get("/register/{inviteCode}", s.handleRegisterPage)
+	s.mux.Post("/register/{inviteCode}", s.handleRegister)
+
+	s.mux.Group(func(r chi.Router) {
+		r.Use(s.requireUser)
+
+		s.mux.Get("/logout", s.handleLogoutPage)
+		s.mux.Post("/logout", s.handleLogout)
+
+		r.Get("/profile", s.handleProfilePage)
+		r.Post("/profile", s.handleProfileEdit)
+		r.Delete("/profile", s.handleProfileDelete)
+		r.Post("/profile/avatar", s.handleAvatarUpload)
+
+		r.Get("/dashboard", s.handleDashboardPage)
+
+		r.Group(func(r chi.Router) {
+			r.Use(s.requireAdmin)
+
+			r.Get("/organizations", s.handleOrganizationsPage)
+			r.Post("/organizations", s.handleOrganizationCreate)
+			r.Delete("/organizations", s.handleOrganizationDelete)
+		})
+	})
 }
 
 func (s *Server) render(w http.ResponseWriter, frag string, data any) {
@@ -105,6 +145,21 @@ func (s *Server) renderPage(w http.ResponseWriter, page string, data any) {
 	}
 }
 
-func (s *Server) handleIndex(w http.ResponseWriter, r *http.Request) {
+func (s *Server) handleIndexPage(w http.ResponseWriter, r *http.Request) {
 	s.renderPage(w, "index.html", nil)
+}
+
+func (s *Server) handleDashboardPage(w http.ResponseWriter, r *http.Request) {
+	s.renderPage(w, "dashboard.html", nil)
+	// get users organizations and stuff idk
+	// if user is admin send to admin dashboard
+}
+
+func redirect(w http.ResponseWriter, r *http.Request, path string) {
+	if r.Header.Get("HX-Request") == "true" {
+		w.Header().Set("HX-Redirect", path)
+		w.WriteHeader(http.StatusUnauthorized)
+		return
+	}
+	http.Redirect(w, r, path, http.StatusSeeOther)
 }

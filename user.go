@@ -1,6 +1,8 @@
 package main
 
 import (
+	"time"
+
 	"github.com/oklog/ulid/v2"
 )
 
@@ -24,10 +26,18 @@ func (s *Server) insertUser(name string, email string, password string, profileP
 	return User{ID: id.String(), Name: name, Email: email, Password: password, ProfilePicture: profilePicture, IsAdmin: isAdmin}, nil
 }
 
-func (s *Server) getUserByEmail(email string) (User, error) {
+func (s *Server) userByEmail(email string) (User, error) {
 	var user User
 	if err := s.db.Get(&user, "SELECT FROM users WHERE email = ?", email); err != nil{
 		return User{}, err
 	}
 	return user, nil
+}
+
+func (s *Server) userBySession(hashedToken string) (User, error) {
+	var u User
+	if err := s.db.Get(&u, "SELECT from sessions s JOIN users u ON u.id = s.user_id WHERE u.token = ? AND expiry_at > ?", hashedToken, time.Now().Unix()); err != nil {
+		return User{}, err
+	}
+	return u, nil
 }

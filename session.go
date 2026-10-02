@@ -8,10 +8,15 @@ import (
 	"time"
 )
 
-func (s *Server) saveSession(hashedToken []byte, userID string, expiresAt time.Time) error {
+func (s *Server) saveSession(hashedToken []byte, userID string, expiresAt time.Time, userAgent string) error {
 	_, err := s.db.Exec(
-		"INSERT INTO sessions (token, user_id, expiresAt) VALUES (?, ?, ?)",
+		"INSERT INTO sessions (token, user_id, expires_at, userAgent) VALUES (?, ?, ?, ?)",
 		hashedToken, userID, expiresAt.Unix())
+	return err
+}
+
+func (s *Server) deleteSession(hashedToken string) error {
+	_, err := s.db.Exec("DELETE FROM sessions WHERE token = ?", hashedToken)
 	return err
 }
 
@@ -21,7 +26,7 @@ func (s *Server) startSession(w http.ResponseWriter, r *http.Request, userID str
 		return err
 	}
 	token := base64.RawURLEncoding.EncodeToString(b)
-	if err := s.saveSession(hash(token), userID, time.Now().Add(30*24*time.Hour)); err != nil {
+	if err := s.saveSession(hash(token), userID, time.Now().Add(30*24*time.Hour), r.UserAgent()); err != nil {
 		return err
 	}
 	http.SetCookie(w, &http.Cookie{
@@ -34,6 +39,11 @@ func (s *Server) startSession(w http.ResponseWriter, r *http.Request, userID str
 		MaxAge:   30 * 24 * 3600,
 	})
 	return nil
+}
+
+func (s *Server) purgeExpiredSessions() error {
+	_, err := s.db.Exec("DELETE FROM sessions WHERE expires_at < ?", time.Now().Unix())
+	return err
 }
 
 func hash(data string) []byte {

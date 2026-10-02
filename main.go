@@ -16,7 +16,7 @@ func main() {
 		panic(fmt.Sprintf("create db object: %v", err))
 	}
 
-	server, err := newServer(db)
+	server, err := newServer(cfg, db)
 	if err != nil {
 		panic(fmt.Sprintf("create server object: %v", err))
 	}
