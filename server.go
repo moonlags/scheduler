@@ -14,6 +14,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/httprate"
 	"github.com/jmoiron/sqlx"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type Server struct {
@@ -28,6 +29,7 @@ func newServer(cfg Config, db *sqlx.DB) (*Server, error) {
 	server := &Server{
 		mux: chi.NewRouter(),
 		db:  db,
+		cfg: cfg,
 	}
 
 	return server, nil
@@ -54,8 +56,13 @@ func (s *Server) run(addr string) error {
 }
 
 func (s *Server) initAdmin() {
-	if _, err := s.db.Exec("INSERT INTO users (id, name, email, password, profile_picture, is_admin) VALUES (?, ?, ?, ?, 'default', TRUE) ON CONFLICT (id) DO NOTHING",
-		"1", "admin", s.cfg.adminEmail, s.cfg.adminPassword); err != nil {
+	hash, err := bcrypt.GenerateFromPassword([]byte(s.cfg.adminPassword), bcrypt.DefaultCost)
+	if err != nil {
+		panic(fmt.Sprintf("hash admin password: %v", err))
+	}
+
+	if _, err := s.db.Exec("INSERT INTO users (id, name, email, password, profile_picture, is_admin) VALUES (?, ?, ?, ?, 'default', TRUE) ON CONFLICT (id) DO UPDATE SET email = excluded.email, password = excluded.password",
+		"1", "admin", s.cfg.adminEmail, hash); err != nil {
 		panic(fmt.Sprintf("init admin: %v", err))
 	}
 }
@@ -103,8 +110,8 @@ func (s *Server) routes() {
 	s.mux.Group(func(r chi.Router) {
 		r.Use(s.requireUser)
 
-		s.mux.Get("/logout", s.handleLogoutPage)
-		s.mux.Post("/logout", s.handleLogout)
+		r.Get("/logout", s.handleLogoutPage)
+		r.Post("/logout", s.handleLogout)
 
 		r.Get("/profile", s.handleProfilePage)
 		r.Post("/profile", s.handleProfileEdit)
@@ -151,7 +158,6 @@ func (s *Server) handleIndexPage(w http.ResponseWriter, r *http.Request) {
 
 func (s *Server) handleDashboardPage(w http.ResponseWriter, r *http.Request) {
 	s.renderPage(w, "dashboard.html", nil)
-	// get users organizations and stuff idk
 	// if user is admin send to admin dashboard
 }
 
