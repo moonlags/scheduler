@@ -1,0 +1,344 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="USE CASE" id="usecase">
+    <mxGraphModel dx="2049" dy="4009" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="2870" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="1630" width="1380" x="440" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;fontSize=15;whiteSpace=wrap;" value="Automatizēta darba grafika sistēma uzņēmumiem" vertex="1">
+          <mxGeometry height="30" width="760" x="750" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="actReg" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Reģistrēts lietotājs" vertex="1">
+          <mxGeometry height="60" width="30" x="200" y="247" as="geometry" />
+        </mxCell>
+        <mxCell id="actEmp" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Darbinieks" vertex="1">
+          <mxGeometry height="60" width="30" x="200" y="547" as="geometry" />
+        </mxCell>
+        <mxCell id="actMgr" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Vecākais darbinieks" vertex="1">
+          <mxGeometry height="60" width="30" x="2020" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="actOrg" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Uzņēmuma administrators" vertex="1">
+          <mxGeometry height="60" width="30" x="200" y="1015" as="geometry" />
+        </mxCell>
+        <mxCell id="actSys" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Sistēmas administrators" vertex="1">
+          <mxGeometry height="60" width="30" x="200" y="1420" as="geometry" />
+        </mxCell>
+        <mxCell id="actUnreg" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Nereģistrēts lietotājs" vertex="1">
+          <mxGeometry height="60" width="30" x="200" y="1580" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_login" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Pieslēgties sistēmai" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_logout" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Atteikties" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_profile" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Rediģēt profilu" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_password" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Mainīt paroli" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_delete" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Dzēst savu kontu" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_view_schedule" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt darba grafiku" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_request_leave" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Pieteikties brīvdienām" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_sick_leave" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Iesniegt slimības lapu" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_view_branch_schedule" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt filiāles darba grafiku" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_generate" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Uzģenerēt darba grafiku" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_edit_schedule" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Rediģēt darba grafiku" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_delete_schedule" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Dzēst darba grafiku" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_settings" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Uzstādīt iestatījumus" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_substitutes" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Noteikt aizvietotājus grafikā" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_hours_summary" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt darbinieku stundu kopsavilkumu" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_employee_list" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt filiāles darbinieku sarakstu" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_edit_employee" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Rediģēt darbinieka datus" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_delete_employee" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Dzēst darbinieku" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_leave_requests" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt darbinieku brīvdienu pieteikumus" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_approve" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apstiprināt vai noraidīt pieteikumu" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_sick_leaves" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt slimības lapas" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_schedule_history" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt grafika labojumu vēsturi" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_invite_employee" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Izveidot darbinieka reģistrācijas saiti" vertex="1">
+          <mxGeometry height="60" width="300" x="1450" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_branches" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt uzņēmuma filiāļu sarakstu" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_create_branch" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Izveidot uzņēmuma filiāli" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_edit_branch" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Rediģēt filiāles datus" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_delete_branch" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Dzēst filiāli" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_edit_org" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Rediģēt uzņēmuma datus" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_delete_org" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Dzēst uzņēmumu" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_history" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt darbību vēsturi" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_invite_manager" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Izveidot vecākā darbinieka reģistrācijas saiti" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="1190" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_change_employee_branch" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Mainīt darbinieka vai vecākā darbinieka filiāli" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_orgs" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apskatīt uzņēmumu sarakstu" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="1350" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_create_org" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Izveidot uzņēmumu" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="1420" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_invite_admin" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Izveidot uzņēmuma administratora reģistrācijas saiti" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_register" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Reģistrēties, izmantojot saiti" vertex="1">
+          <mxGeometry height="60" width="300" x="500" y="1580" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_confirm" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Ievadīt paroli apstiprināšanai" vertex="1">
+          <mxGeometry height="60" width="300" x="920" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_filter" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Filtrēt pēc lietotāja lomas un laika" vertex="1">
+          <mxGeometry height="60" width="300" x="920" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc01" edge="1" parent="1" source="actReg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc02" edge="1" parent="1" source="actReg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_logout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc03" edge="1" parent="1" source="actReg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_profile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc04" edge="1" parent="1" source="actReg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_password">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc05" edge="1" parent="1" source="actReg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_delete">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc06" edge="1" parent="1" source="actEmp" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_view_schedule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc07" edge="1" parent="1" source="actEmp" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_request_leave">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc08" edge="1" parent="1" source="actEmp" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_sick_leave">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc09" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_view_branch_schedule">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc10" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_generate">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc11" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_edit_schedule">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc12" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_delete_schedule">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc13" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_settings">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc14" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_substitutes">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc15" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_hours_summary">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc16" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_employee_list">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc17" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_edit_employee">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc18" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_delete_employee">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc19" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_leave_requests">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc20" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_approve">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc21" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_sick_leaves">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc22" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_schedule_history">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc23" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_invite_employee">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2020" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc24" edge="1" parent="1" source="actOrg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_branches">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc25" edge="1" parent="1" source="actOrg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_create_branch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc26" edge="1" parent="1" source="actOrg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_edit_branch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc27" edge="1" parent="1" source="actOrg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_delete_branch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc28" edge="1" parent="1" source="actOrg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_edit_org">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc29" edge="1" parent="1" source="actOrg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_delete_org">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc30" edge="1" parent="1" source="actOrg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc31" edge="1" parent="1" source="actOrg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_invite_manager">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc37" edge="1" parent="1" source="actOrg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_change_employee_branch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc32" edge="1" parent="1" source="actSys" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_orgs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc33" edge="1" parent="1" source="actSys" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_create_org">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc34" edge="1" parent="1" source="actSys" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_invite_admin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc35" edge="1" parent="1" source="actSys" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc36" edge="1" parent="1" source="actUnreg" style="html=1;endArrow=none;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_register">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_emp" edge="1" parent="1" style="html=1;endArrow=block;endFill=0;endSize=12;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;">
+          <mxGeometry relative="1" x="-0.0114" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="576" />
+              <mxPoint x="110" y="309" />
+            </Array>
+            <mxPoint x="210" y="576" as="sourcePoint" />
+            <mxPoint x="200" y="309" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gen_mgr" edge="1" parent="1" style="html=1;endArrow=block;endFill=0;endSize=12;rounded=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="actReg">
+          <mxGeometry relative="1" x="-0.0062" as="geometry">
+            <Array as="points">
+              <mxPoint x="2120" y="620" />
+              <mxPoint x="2120" y="10" />
+              <mxPoint x="100" y="10" />
+              <mxPoint x="100" y="271" />
+            </Array>
+            <mxPoint x="2060" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gen_org" edge="1" parent="1" source="actOrg" style="html=1;endArrow=block;endFill=0;endSize=12;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;">
+          <mxGeometry relative="1" x="-0.0245" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="1045" />
+              <mxPoint x="130" y="1700" />
+              <mxPoint x="2120" y="1700" />
+              <mxPoint x="2120" y="641" />
+            </Array>
+            <mxPoint x="2050" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gen_sys" edge="1" parent="1" source="actSys" style="html=1;endArrow=block;endFill=0;endSize=12;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="actReg">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="1450" />
+              <mxPoint x="90" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc_password" edge="1" parent="1" source="uc_password" style="html=1;endArrow=open;endFill=0;endSize=12;dashed=1;rounded=0;verticalAlign=bottom;labelBackgroundColor=none;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_confirm" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_delete" edge="1" parent="1" source="uc_delete" style="html=1;endArrow=open;endFill=0;endSize=12;dashed=1;rounded=0;verticalAlign=bottom;labelBackgroundColor=none;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_confirm" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_filter" edge="1" parent="1" source="uc_filter" style="html=1;endArrow=open;endFill=0;endSize=12;dashed=1;rounded=0;verticalAlign=bottom;labelBackgroundColor=none;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="uc_history" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Z1D_N6Wjd3jDhvPJQgmy-1" edge="1" parent="1" style="html=1;endArrow=none;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="uc_delete_org">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="1450" as="sourcePoint" />
+            <mxPoint x="660" y="1180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

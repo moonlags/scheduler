@@ -1,4 +1,4 @@
-package main
+package web
 
 import (
 	"context"
@@ -8,6 +8,8 @@ import (
 	"net/http"
 
 	"golang.org/x/crypto/bcrypt"
+
+	"github.com/moonlags/ikeaScheduler/internal/store"
 )
 
 type ctxKey struct{}
@@ -28,12 +30,12 @@ func (s *Server) handleLogin(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	u, err := s.userByEmail(email)
+	u, err := s.store.UserByEmail(email)
 	if errors.Is(err, sql.ErrNoRows) {
 		http.Error(w, "email or password is not correct", http.StatusUnauthorized)
 		return
 	} else if err != nil {
-		log.Println("handleLogin: ", err)
+		log.Println("handleLogin:", err)
 		http.Error(w, "internal error", http.StatusInternalServerError)
 		return
 	}
@@ -43,18 +45,18 @@ func (s *Server) handleLogin(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "email or password is not correct", http.StatusUnauthorized)
 		return
 	} else if err != nil {
-		log.Println("handleLogin: ", err)
+		log.Println("handleLogin:", err)
 		http.Error(w, "internal error", http.StatusInternalServerError)
 		return
 	}
 
 	if err := s.startSession(w, r, u.ID); err != nil {
-		log.Println("handleLogin: ", err)
+		log.Println("handleLogin:", err)
 		http.Error(w, "internal error", http.StatusInternalServerError)
 		return
 	}
 
-	redirect(w, r, "/login")
+	redirect(w, r, "/dashboard")
 }
 
 func (s *Server) handleLogoutPage(w http.ResponseWriter, r *http.Request) {
@@ -62,21 +64,16 @@ func (s *Server) handleLogoutPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) handleLogout(w http.ResponseWriter, r *http.Request) {
-	if c, err := r.Cookie("sid"); err == nil {
-		s.deleteSession(hash(c.Value))
-	}
-	http.SetCookie(w, &http.Cookie{
-		Name: "sid", Value: "", Path: "/", MaxAge: -1,
-		HttpOnly: true, Secure: true, SameSite: http.SameSiteLaxMode,
-	})
+	s.deleteSession(w, r)
 	redirect(w, r, "/login")
 }
 
+// withUser loads the logged-in user, if any, into the request context.
 func (s *Server) withUser(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if c, err := r.Cookie("sid"); err == nil {
-			if u, err := s.userBySession(hash(c.Value)); err == nil {
-				r = r.WithContext(context.WithValue(r.Context(), ctxKey{}, u))
+		if c, err := r.Cookie(sessionCookie); err == nil {
+			if u, err := s.store.UserBySession(hash(c.Value)); err == nil {
+				r = r.WithContext(context.WithValue(r.Context(), ctxKey{}, &u))
 			}
 		}
 		next.ServeHTTP(w, r)
@@ -95,7 +92,12 @@ func (s *Server) requireUser(next http.Handler) http.Handler {
 
 func (s *Server) requireAdmin(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if !userFrom(r.Context()).IsAdmin {
+		u := userFrom(r.Context())
+		if u == nil {
+			redirect(w, r, "/login")
+			return
+		}
+		if !u.IsAdmin {
 			redirect(w, r, "/dashboard")
 			return
 		}
@@ -103,7 +105,7 @@ func (s *Server) requireAdmin(next http.Handler) http.Handler {
 	})
 }
 
-func userFrom(ctx context.Context) *User {
-	u, _ := ctx.Value(ctxKey{}).(*User)
+func userFrom(ctx context.Context) *store.User {
+	u, _ := ctx.Value(ctxKey{}).(*store.User)
 	return u
 }

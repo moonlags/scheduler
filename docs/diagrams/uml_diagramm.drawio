@@ -1,0 +1,797 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Klasu diagramma" id="klasu">
+    <mxGraphModel dx="1178" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="base" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="&amp;lt;&amp;lt;abstract&amp;gt;&amp;gt;&lt;br&gt;&lt;i&gt;ReģistrētsLietotājs&lt;/i&gt;" vertex="1">
+          <mxGeometry height="386" width="320" x="998" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="base_a0" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- id : int" vertex="1">
+          <mxGeometry height="26" width="320" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="base_a1" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- vārds : String" vertex="1">
+          <mxGeometry height="26" width="320" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="base_a2" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- uzvārds : String" vertex="1">
+          <mxGeometry height="26" width="320" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="base_a3" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- epasts : String" vertex="1">
+          <mxGeometry height="26" width="320" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="base_a4" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- paroleJaucējkods : String" vertex="1">
+          <mxGeometry height="26" width="320" y="144" as="geometry" />
+        </mxCell>
+        <mxCell id="base_a5" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- izveidesLaiks : DateTime" vertex="1">
+          <mxGeometry height="26" width="320" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="base_d" parent="base" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="320" y="196" as="geometry" />
+        </mxCell>
+        <mxCell id="base_m0" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ pieslēgties(epasts, parole) : boolean" vertex="1">
+          <mxGeometry height="26" width="320" y="204" as="geometry" />
+        </mxCell>
+        <mxCell id="base_m1" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ atteikties() : void" vertex="1">
+          <mxGeometry height="26" width="320" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="base_m2" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ apskatītProfilu() : void" vertex="1">
+          <mxGeometry height="26" width="320" y="256" as="geometry" />
+        </mxCell>
+        <mxCell id="base_m3" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ mainītVārdu(vārds, uzvārds) : void" vertex="1">
+          <mxGeometry height="26" width="320" y="282" as="geometry" />
+        </mxCell>
+        <mxCell id="base_m4" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ mainītEpastu(jaunaisEpasts, parole) : boolean" vertex="1">
+          <mxGeometry height="26" width="320" y="308" as="geometry" />
+        </mxCell>
+        <mxCell id="base_m5" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ mainītParoli(esošā, jaunā) : boolean" vertex="1">
+          <mxGeometry height="26" width="320" y="334" as="geometry" />
+        </mxCell>
+        <mxCell id="base_m6" parent="base" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ dzēstKontu(parole) : boolean" vertex="1">
+          <mxGeometry height="26" width="320" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="dar" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="Darbinieks" vertex="1">
+          <mxGeometry height="164" width="410" x="1366" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="dar_a0" parent="dar" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- slodze : float" vertex="1">
+          <mxGeometry height="26" width="410" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dar_d" parent="dar" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="410" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="dar_m0" parent="dar" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ apskatītGrafiku(gads, mēnesis) : DarbaGrafiks" vertex="1">
+          <mxGeometry height="26" width="410" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dar_m1" parent="dar" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ pieteiktBrīvdienas(no, līdz, iemesls) : BrīvdienuPieteikums" vertex="1">
+          <mxGeometry height="26" width="410" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="dar_m2" parent="dar" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ iesniegtSlimībasLapu(no, līdz) : SlimībasLapa" vertex="1">
+          <mxGeometry height="26" width="410" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="dar_m3" parent="dar" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ apskatītSavusPieteikumus() : List" vertex="1">
+          <mxGeometry height="26" width="410" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="sen" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="VecākaisDarbinieks" vertex="1">
+          <mxGeometry height="294" width="378" x="969" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_d" parent="sen" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="378" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m0" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ izveidotDarbiniekaSaiti(slodze) : ReģistrācijasSaite" vertex="1">
+          <mxGeometry height="26" width="378" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m1" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ labotDarbinieku(darbinieks, dati) : boolean" vertex="1">
+          <mxGeometry height="26" width="378" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m2" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ dzēstDarbinieku(darbinieks) : boolean" vertex="1">
+          <mxGeometry height="26" width="378" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m3" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ uzstādītIestatījumus(iestatījumi) : boolean" vertex="1">
+          <mxGeometry height="26" width="378" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m4" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ ģenerētGrafiku(gads, mēnesis) : DarbaGrafiks" vertex="1">
+          <mxGeometry height="26" width="378" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m5" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ labotMaiņu(ieraksts) : boolean" vertex="1">
+          <mxGeometry height="26" width="378" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m6" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ apskatītPieteikumus() : List" vertex="1">
+          <mxGeometry height="26" width="378" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m7" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ izskatītPieteikumu(pieteikums, lēmums, iemesls) : void" vertex="1">
+          <mxGeometry height="26" width="378" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m8" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ piešķirtAizvietotāju(ieraksts, darbinieks) : boolean" vertex="1">
+          <mxGeometry height="26" width="378" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="sen_m9" parent="sen" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ apskatītGrafikaVēsturi(no, līdz) : List" vertex="1">
+          <mxGeometry height="26" width="378" y="268" as="geometry" />
+        </mxCell>
+        <mxCell id="org" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="UzņēmumaAdministrators" vertex="1">
+          <mxGeometry height="242" width="410" x="540" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="org_d" parent="org" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="410" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="org_m0" parent="org" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ izveidotFiliāli(nosaukums, adrese) : Filiāle" vertex="1">
+          <mxGeometry height="26" width="410" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="org_m1" parent="org" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ labotFiliāli(filiāle, nosaukums, adrese) : boolean" vertex="1">
+          <mxGeometry height="26" width="410" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="org_m2" parent="org" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ dzēstFiliāli(filiāle, parole) : boolean" vertex="1">
+          <mxGeometry height="26" width="410" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="org_m3" parent="org" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ izveidotVecākāDarbiniekaSaiti(filiāle) : ReģistrācijasSaite" vertex="1">
+          <mxGeometry height="26" width="410" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="org_m4" parent="org" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ labotUzņēmumu(nosaukums) : boolean" vertex="1">
+          <mxGeometry height="26" width="410" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="org_m5" parent="org" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ dzēstUzņēmumu(parole) : boolean" vertex="1">
+          <mxGeometry height="26" width="410" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="org_m6" parent="org" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ apskatītVēsturi(loma, no, līdz) : List" vertex="1">
+          <mxGeometry height="26" width="410" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="org_m7" parent="org" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ mainītDarbiniekaFiliāli(darbinieks, filiāle) : boolean" vertex="1">
+          <mxGeometry height="26" width="410" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="sys" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="SistēmasAdministrators" vertex="1">
+          <mxGeometry height="164" width="404" x="260" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_d" parent="sys" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="404" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_m0" parent="sys" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ izveidotUzņēmumu(nosaukums) : Uzņēmums" vertex="1">
+          <mxGeometry height="26" width="404" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_m1" parent="sys" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ izveidotAdministratoraSaiti(uzņēmums) : ReģistrācijasSaite" vertex="1">
+          <mxGeometry height="26" width="404" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_m2" parent="sys" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ apskatītUzņēmumuSarakstu() : List" vertex="1">
+          <mxGeometry height="26" width="404" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_m3" parent="sys" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ apskatītVēsturi(loma, no, līdz) : List" vertex="1">
+          <mxGeometry height="26" width="404" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="VdgkVhYOCg4qcGlvmFbe-1" parent="sys" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ dzēstUzņēmumu(): void" vertex="1">
+          <mxGeometry height="26" width="404" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="uzn" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="Uzņēmums" vertex="1">
+          <mxGeometry height="216" width="320" x="585" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="uzn_a0" parent="uzn" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- id : int" vertex="1">
+          <mxGeometry height="26" width="320" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="uzn_a1" parent="uzn" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- nosaukums : String" vertex="1">
+          <mxGeometry height="26" width="320" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uzn_a2" parent="uzn" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- izveidesLaiks : DateTime" vertex="1">
+          <mxGeometry height="26" width="320" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="uzn_d" parent="uzn" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="320" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="uzn_m0" parent="uzn" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ pievienotFiliāli(nosaukums, adrese) : Filiāle" vertex="1">
+          <mxGeometry height="26" width="320" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="uzn_m1" parent="uzn" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ mainītNosaukumu(nosaukums) : boolean" vertex="1">
+          <mxGeometry height="26" width="320" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="uzn_m2" parent="uzn" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ iegūtFiliāles() : List" vertex="1">
+          <mxGeometry height="26" width="320" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="uzn_m3" parent="uzn" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ dzēst() : void" vertex="1">
+          <mxGeometry height="26" width="320" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="fil" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="Filiāle" vertex="1">
+          <mxGeometry height="216" width="301" x="1007.5" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="fil_a0" parent="fil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- id : int" vertex="1">
+          <mxGeometry height="26" width="301" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="fil_a1" parent="fil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- nosaukums : String" vertex="1">
+          <mxGeometry height="26" width="301" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="fil_a2" parent="fil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- adrese : String" vertex="1">
+          <mxGeometry height="26" width="301" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="fil_d" parent="fil" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="301" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="fil_m0" parent="fil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ iegūtDarbiniekus() : List" vertex="1">
+          <mxGeometry height="26" width="301" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="fil_m1" parent="fil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ iegūtGrafiku(gads, mēnesis) : DarbaGrafiks" vertex="1">
+          <mxGeometry height="26" width="301" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="fil_m2" parent="fil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ mainītDatus(nosaukums, adrese) : boolean" vertex="1">
+          <mxGeometry height="26" width="301" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="fil_m3" parent="fil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ dzēst() : void" vertex="1">
+          <mxGeometry height="26" width="301" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ies" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="FiliālesIestatījumi" vertex="1">
+          <mxGeometry height="138" width="224" x="1046" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="ies_a0" parent="ies" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- maksMaiņasGarums : float" vertex="1">
+          <mxGeometry height="26" width="224" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ies_a1" parent="ies" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- minAtpūtasLaiks : float" vertex="1">
+          <mxGeometry height="26" width="224" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="ies_d" parent="ies" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="224" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="ies_m0" parent="ies" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ saglabāt() : boolean" vertex="1">
+          <mxGeometry height="26" width="224" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="ies_m1" parent="ies" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ pārbaudītKorektumu() : boolean" vertex="1">
+          <mxGeometry height="26" width="224" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="dl" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="DarbaLaiks" vertex="1">
+          <mxGeometry height="138" width="224" x="976" y="1380" as="geometry" />
+        </mxCell>
+        <mxCell id="dl_a0" parent="dl" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- nedēļasDiena : int" vertex="1">
+          <mxGeometry height="26" width="224" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dl_a1" parent="dl" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- sākums : Time" vertex="1">
+          <mxGeometry height="26" width="224" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="dl_a2" parent="dl" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- beigas : Time" vertex="1">
+          <mxGeometry height="26" width="224" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="dl_d" parent="dl" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="224" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="dl_m0" parent="dl" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ pārbaudītKorektumu() : boolean" vertex="1">
+          <mxGeometry height="26" width="224" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="int" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="NodrošinājumaIntervāls" vertex="1">
+          <mxGeometry height="164" width="282" x="988" y="1550" as="geometry" />
+        </mxCell>
+        <mxCell id="int_a0" parent="int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- nedēļasDiena : int" vertex="1">
+          <mxGeometry height="26" width="282" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="int_a1" parent="int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- sākums : Time" vertex="1">
+          <mxGeometry height="26" width="282" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="int_a2" parent="int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- beigas : Time" vertex="1">
+          <mxGeometry height="26" width="282" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="int_a3" parent="int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- darbiniekuSkaits : int" vertex="1">
+          <mxGeometry height="26" width="282" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="int_d" parent="int" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="282" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="int_m0" parent="int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ atrodasDarbaLaikā(darbaLaiks) : boolean" vertex="1">
+          <mxGeometry height="26" width="282" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="gr" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="DarbaGrafiks" vertex="1">
+          <mxGeometry height="268" width="263" x="1290" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_a0" parent="gr" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- gads : int" vertex="1">
+          <mxGeometry height="26" width="263" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_a1" parent="gr" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- mēnesis : int" vertex="1">
+          <mxGeometry height="26" width="263" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_a2" parent="gr" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- versija : int" vertex="1">
+          <mxGeometry height="26" width="263" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_a3" parent="gr" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- ģenerēšanasLaiks : DateTime" vertex="1">
+          <mxGeometry height="26" width="263" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_d" parent="gr" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="263" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_m0" parent="gr" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ ģenerēt() : void" vertex="1">
+          <mxGeometry height="26" width="263" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_m1" parent="gr" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ aprēķinātStundas() : Map" vertex="1">
+          <mxGeometry height="26" width="263" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_m2" parent="gr" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ noteiktTrūkumu() : List" vertex="1">
+          <mxGeometry height="26" width="263" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_m3" parent="gr" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ atrastAizvietotājus(ieraksts) : List" vertex="1">
+          <mxGeometry height="26" width="263" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="gr_m4" parent="gr" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ dzēst() : void" vertex="1">
+          <mxGeometry height="26" width="263" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="ier" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="GrafikaIeraksts" vertex="1">
+          <mxGeometry height="268" width="250" x="1446" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_a0" parent="ier" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- datums : Date" vertex="1">
+          <mxGeometry height="26" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_a1" parent="ier" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- sākums : Time" vertex="1">
+          <mxGeometry height="26" width="250" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_a2" parent="ier" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- beigas : Time" vertex="1">
+          <mxGeometry height="26" width="250" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_a3" parent="ier" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- statuss : String" vertex="1">
+          <mxGeometry height="26" width="250" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_a4" parent="ier" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- darbiniekaVārds : String" vertex="1">
+          <mxGeometry height="26" width="250" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_d" parent="ier" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="250" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_m0" parent="ier" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ aprēķinātGarumu() : float" vertex="1">
+          <mxGeometry height="26" width="250" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_m1" parent="ier" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ piešķirt(darbinieks) : boolean" vertex="1">
+          <mxGeometry height="26" width="250" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_m2" parent="ier" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ atzīmētKāBrīvu() : void" vertex="1">
+          <mxGeometry height="26" width="250" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="ier_m3" parent="ier" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ pārbaudītIerobežojumus() : boolean" vertex="1">
+          <mxGeometry height="26" width="250" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="bri" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="BrīvdienuPieteikums" vertex="1">
+          <mxGeometry height="268" width="269" x="1436.5" y="426" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_a0" parent="bri" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- sākumaDatums : Date" vertex="1">
+          <mxGeometry height="26" width="269" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_a1" parent="bri" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- beiguDatums : Date" vertex="1">
+          <mxGeometry height="26" width="269" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_a2" parent="bri" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- iemesls : String" vertex="1">
+          <mxGeometry height="26" width="269" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_a3" parent="bri" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- statuss : String" vertex="1">
+          <mxGeometry height="26" width="269" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_a4" parent="bri" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- noraidīšanasIemesls : String" vertex="1">
+          <mxGeometry height="26" width="269" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_a5" parent="bri" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- izskatīšanasLaiks : DateTime" vertex="1">
+          <mxGeometry height="26" width="269" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_d" parent="bri" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="269" y="182" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_m0" parent="bri" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ apstiprināt(izskatītājs) : void" vertex="1">
+          <mxGeometry height="26" width="269" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_m1" parent="bri" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ noraidīt(izskatītājs, iemesls) : void" vertex="1">
+          <mxGeometry height="26" width="269" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="bri_m2" parent="bri" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ pārklājasAr(no, līdz) : boolean" vertex="1">
+          <mxGeometry height="26" width="269" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="sli" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="SlimībasLapa" vertex="1">
+          <mxGeometry height="164" width="212" x="1720" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="sli_a0" parent="sli" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- sākumaDatums : Date" vertex="1">
+          <mxGeometry height="26" width="212" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sli_a1" parent="sli" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- beiguDatums : Date" vertex="1">
+          <mxGeometry height="26" width="212" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="sli_a2" parent="sli" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- iesniegšanasLaiks : DateTime" vertex="1">
+          <mxGeometry height="26" width="212" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="sli_d" parent="sli" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="212" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="sli_m0" parent="sli" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ reģistrēt() : boolean" vertex="1">
+          <mxGeometry height="26" width="212" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="sli_m1" parent="sli" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ atbrīvotMaiņas() : int" vertex="1">
+          <mxGeometry height="26" width="212" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="sai" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="ReģistrācijasSaite" vertex="1">
+          <mxGeometry height="268" width="429" x="550" y="1095" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_a0" parent="sai" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- kods : String" vertex="1">
+          <mxGeometry height="26" width="429" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_a1" parent="sai" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- loma : String" vertex="1">
+          <mxGeometry height="26" width="429" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_a2" parent="sai" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- slodze : float" vertex="1">
+          <mxGeometry height="26" width="429" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_a3" parent="sai" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- izveidesLaiks : DateTime" vertex="1">
+          <mxGeometry height="26" width="429" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_a4" parent="sai" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- derīgumaBeigas : DateTime" vertex="1">
+          <mxGeometry height="26" width="429" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_a5" parent="sai" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- izmantota : boolean" vertex="1">
+          <mxGeometry height="26" width="429" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_d" parent="sai" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="429" y="182" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_m0" parent="sai" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ ģenerētKodu() : String" vertex="1">
+          <mxGeometry height="26" width="429" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_m1" parent="sai" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ irDerīga() : boolean" vertex="1">
+          <mxGeometry height="26" width="429" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="sai_m2" parent="sai" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ izmantot(vārds, uzvārds, epasts, parole) : ReģistrētsLietotājs" vertex="1">
+          <mxGeometry height="26" width="429" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="vst" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="VēsturesIeraksts" vertex="1">
+          <mxGeometry height="268" width="333" x="1446" y="99" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_a0" parent="vst" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- lietotājaVārds : String" vertex="1">
+          <mxGeometry height="26" width="333" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_a1" parent="vst" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- lietotājaLoma : String" vertex="1">
+          <mxGeometry height="26" width="333" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_a2" parent="vst" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- darbībasVeids : String" vertex="1">
+          <mxGeometry height="26" width="333" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_a3" parent="vst" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- objektaVeids : String" vertex="1">
+          <mxGeometry height="26" width="333" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_a4" parent="vst" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- vecāVērtība : String" vertex="1">
+          <mxGeometry height="26" width="333" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_a5" parent="vst" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- jaunāVērtība : String" vertex="1">
+          <mxGeometry height="26" width="333" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_a6" parent="vst" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- laiks : DateTime" vertex="1">
+          <mxGeometry height="26" width="333" y="182" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_d" parent="vst" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="333" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_m0" parent="vst" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ ierakstīt(darbība, objekts, vecā, jaunā) : void" vertex="1">
+          <mxGeometry height="26" width="333" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="vst_m1" parent="vst" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ atlasīt(loma, no, līdz) : List" vertex="1">
+          <mxGeometry height="26" width="333" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="epa" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;" value="EpastaPaziņojums" vertex="1">
+          <mxGeometry height="190" width="237" x="680" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="epa_a0" parent="epa" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- adresāts : String" vertex="1">
+          <mxGeometry height="26" width="237" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="epa_a1" parent="epa" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- tēma : String" vertex="1">
+          <mxGeometry height="26" width="237" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="epa_a2" parent="epa" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- teksts : String" vertex="1">
+          <mxGeometry height="26" width="237" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="epa_a3" parent="epa" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- notikums : String" vertex="1">
+          <mxGeometry height="26" width="237" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="epa_d" parent="epa" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="237" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="epa_m0" parent="epa" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ sagatavot(notikums, dati) : void" vertex="1">
+          <mxGeometry height="26" width="237" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="epa_m1" parent="epa" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ nosūtīt() : boolean" vertex="1">
+          <mxGeometry height="26" width="237" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="uzn" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="fil" value="">
+          <mxGeometry relative="1" x="0.0022" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="908" />
+              <mxPoint x="990" y="908" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n3" connectable="0" parent="e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.7073" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n4" connectable="0" parent="e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.82" y="-12" as="geometry">
+            <mxPoint x="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="uzn" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="org" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" connectable="0" parent="e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8298" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n6" connectable="0" parent="e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.8298" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="fil" style="endArrow=none;startArrow=diamondThin;startFill=0;startSize=16;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="dar" value="">
+          <mxGeometry relative="1" x="-0.0665" as="geometry">
+            <Array as="points">
+              <mxPoint x="1430" y="950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n7" connectable="0" parent="e6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.728" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n8" connectable="0" parent="e6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.7524" y="-12" as="geometry">
+            <mxPoint y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="fil" style="endArrow=none;startArrow=diamondThin;startFill=0;startSize=16;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="sen" value="">
+          <mxGeometry relative="1" x="-0.042" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" connectable="0" parent="e7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n10" connectable="0" parent="e7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="fil" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="ies" value="">
+          <mxGeometry relative="1" x="0.0525" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" connectable="0" parent="e8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n12" connectable="0" parent="e8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="ies" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="dl" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1158" y="1380" />
+              <mxPoint x="1100" y="1380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n13" connectable="0" parent="e9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.2903" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n14" connectable="0" parent="e9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="0..7" vertex="1">
+          <mxGeometry relative="1" x="0.82" y="-12" as="geometry">
+            <mxPoint y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="ies" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="int" value="">
+          <mxGeometry relative="1" x="-0.0106" as="geometry">
+            <Array as="points">
+              <mxPoint x="1251" y="1430" />
+              <mxPoint x="1251" y="1430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n15" connectable="0" parent="e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n16" connectable="0" parent="e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.7871" y="-12" as="geometry">
+            <mxPoint y="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="fil" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="gr" value="">
+          <mxGeometry relative="1" x="0.3765" as="geometry">
+            <Array as="points">
+              <mxPoint x="1290" y="1310" />
+              <mxPoint x="1310" y="1310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n17" connectable="0" parent="e11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.5775" y="-12" as="geometry">
+            <mxPoint y="-35" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n18" connectable="0" parent="e11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.7653" y="-12" as="geometry">
+            <mxPoint x="15" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="gr" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="ier" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1421.5" y="1309" />
+              <mxPoint x="1470" y="1309" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n19" connectable="0" parent="e12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.6561" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n20" connectable="0" parent="e12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="ier" style="endArrow=none;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="dar" value="">
+          <mxGeometry relative="1" x="0.0245" as="geometry" />
+        </mxCell>
+        <mxCell id="n21" connectable="0" parent="e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="-0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n22" connectable="0" parent="e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="dar" style="endArrow=none;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="bri" value="">
+          <mxGeometry relative="1" x="-0.0406" as="geometry" />
+        </mxCell>
+        <mxCell id="n24" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.82" y="-12" as="geometry">
+            <mxPoint x="-3" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n25" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.82" y="-12" as="geometry">
+            <mxPoint y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="dar" style="endArrow=none;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="sli" value="">
+          <mxGeometry relative="1" x="-0.2982" as="geometry">
+            <Array as="points">
+              <mxPoint x="1640" y="947" />
+              <mxPoint x="1802" y="947" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n27" connectable="0" parent="e15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n28" connectable="0" parent="e15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.7632" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="bri" style="endArrow=none;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="base" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1410" y="560" />
+              <mxPoint x="1410" y="329.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n30" connectable="0" parent="e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="-0.8021" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n31" connectable="0" parent="e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.8223" y="-12" as="geometry">
+            <mxPoint x="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="sai" style="endArrow=none;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="uzn" value="">
+          <mxGeometry relative="1" x="0.0247" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="1080" />
+              <mxPoint x="630" y="1080" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n33" connectable="0" parent="e17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="-0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n34" connectable="0" parent="e17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.7411" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="sai" style="endArrow=none;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="fil" value="">
+          <mxGeometry relative="1" x="0.2289" as="geometry">
+            <Array as="points">
+              <mxPoint x="713.5" y="1030" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n35" connectable="0" parent="e18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="-0.7821" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n36" connectable="0" parent="e18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.6578" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="vst" style="endArrow=none;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="base" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n37" connectable="0" parent="e19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="-0.8168" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n38" connectable="0" parent="e19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.8168" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="epa" style="endArrow=none;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="base" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n40" connectable="0" parent="e20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="-0.822" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n41" connectable="0" parent="e20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.822" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="sai" style="dashed=1;endArrow=open;endSize=10;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="base" value="">
+          <mxGeometry relative="1" x="0.0864" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n43" connectable="0" parent="e21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" value="«create»" vertex="1">
+          <mxGeometry relative="1" x="0.0864" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t7KYOI7UCYSHJdslgrrp-1" edge="1" parent="1" source="dar" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" target="base_m6" value="">
+          <mxGeometry relative="1" width="160" x="-0.2" as="geometry">
+            <Array as="points">
+              <mxPoint x="1390" y="750" />
+              <mxPoint x="1390" y="413" />
+            </Array>
+            <mxPoint x="1260" y="620" as="sourcePoint" />
+            <mxPoint x="1420" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XUm3s8S17oVoiyFvuJ0F-2" edge="1" parent="1" source="sen" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="base" value="">
+          <mxGeometry relative="1" width="160" x="0.0792" as="geometry">
+            <Array as="points">
+              <mxPoint x="1252.5" y="470" />
+              <mxPoint x="1238" y="470" />
+            </Array>
+            <mxPoint x="1250" y="690" as="sourcePoint" />
+            <mxPoint x="1410" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XUm3s8S17oVoiyFvuJ0F-3" edge="1" parent="1" source="org" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="base_m6" value="">
+          <mxGeometry relative="1" x="0.3908" as="geometry" />
+        </mxCell>
+        <mxCell id="XUm3s8S17oVoiyFvuJ0F-4" edge="1" parent="1" source="sys" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" target="base" value="">
+          <mxGeometry relative="1" width="160" x="-0.5057" as="geometry">
+            <Array as="points">
+              <mxPoint x="664" y="329.5" />
+            </Array>
+            <mxPoint x="450" y="580" as="sourcePoint" />
+            <mxPoint x="610" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
