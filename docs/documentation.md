@@ -66,11 +66,12 @@ Tirgū ir universālas grafiku vadības sistēmas: Planday, Deputy un Shiftbase.
 
 Sistēmas mērķis ir automatizēt ikmēneša darba grafika sastādīšanu, ievērojot darbinieku slodzes, mēneša stundu normu, summēto darba laiku un atpūtas prasības, kā arī nodrošināt vienotu vidi grafika izveidei, vēlamo brīvdienu un slimības gadījumu uzskaitei un aizvietotāja izvēlei. Sistēma tiek veidota universāla, ar jēdzienu “darbinieks”, lai to varētu izmantot jebkurā uzņēmumā ar maiņu darbu.
 
-Mērķauditorija ir mazumtirdzniecības uzņēmumi ar maiņu darbu un trīs lietotāju grupas:
+Mērķauditorija ir mazumtirdzniecības uzņēmumi ar maiņu darbu. Sistēmā ir četras lietotāju lomas:
 
 1. *uzņēmuma administratori* — pārvalda uzņēmuma filiāles, reģistrē vecākos darbiniekus un nepieciešamības gadījumā paši var labot grafiku;
 2. *vecākie darbinieki* — sastāda grafiku, apstiprina vēlamās brīvdienas un izvēlas aizvietotāju slimības gadījumā; viņiem nepieciešams ātrāks process un automātiska stundu aprēķināšana;
-3. *darbinieki *— iesniedz vēlamās brīvdienas un slimības informāciju, un jebkurā laikā redz savu grafiku.
+3. *darbinieki *— iesniedz vēlamās brīvdienas un slimības informāciju, un jebkurā laikā redz savu grafiku;
+4. *sistēmas administrators* — pārvalda uzņēmumu sarakstu, izveido uzņēmumus un uzņēmuma administratoru reģistrācijas saites, kā arī apskata visu uzņēmumu darbību vēsturi.
 
 Sistēmas paredzamie ieguvumi ir mazāks grafikam veltītais laiks, mazāk kļūdu, caurskatāma brīvdienu apstiprināšana, aizvietotāja ieteikšana un grafika labojumu vēsture.
 
@@ -136,10 +137,10 @@ Sistēmā tiks nodrošināta šāda ieejas informācija, ko ievada lietotājs.
 Sistēma lietotājam attēlos šādu izejas informāciju.
 
 1. **Uzņēmumu saraksts** (sistēmas administrators). Katram uzņēmumam tiek attēlots nosaukums un filiāļu skaits. Saraksts tiek attēlots pēc uzņēmuma nosaukuma alfabētiskā secībā.
-2. **Filiāļu saraksts** (uzņēmuma administrators, sistēmas administrators). Katrai filiālei tiek attēlots nosaukums, adrese un darbinieku skaits.
-3. **Filiāles darbinieku saraksts** (vecākais darbinieks, uzņēmuma administrators, sistēmas administrators). Katram darbiniekam tiek attēlots vārds, uzvārds, e-pasts, loma un slodze (tikai darbiniekiem).
-4. **Darba grafiks (darbinieks, vecākais darbinieks, uzņēmuma administrators, sistēmas administrators).** Grafiks tiek attēlots tabulā izvēlētajam mēnesim: rindās darbinieki, kolonnās mēneša dienas, šūnās maiņas sākuma un beigu laiks. Darbinieks redz visas filiāles darbinieku maiņas, bet dienas, kad kolēģis nestrādā brīvdienas vai slimības dēļ, viņam tiek atzīmētas vienādi kā ‘Nestrādā’. Vecākais darbinieks un administratori redz arī iemeslu (‘Brīvdiena’ vai ‘Slimība’).
-5. **Darbinieku stundu kopsavilkums** (vecākais darbinieks, uzņēmuma administrators, sistēmas administrators). Katram darbiniekam tiek attēlota mēneša stundu norma (darba dienu skaits, reizināts ar 8 stundām un slodzi), grafikā ieplānoto stundu summa un starpība starp tām.
+2. **Filiāļu saraksts** (uzņēmuma administrators). Katrai filiālei tiek attēlots nosaukums, adrese un darbinieku skaits.
+3. **Filiāles darbinieku saraksts** (vecākais darbinieks, uzņēmuma administrators). Katram darbiniekam tiek attēlots vārds, uzvārds, e-pasts, loma un slodze (tikai darbiniekiem).
+4. **Darba grafiks (darbinieks, vecākais darbinieks, uzņēmuma administrators).** Grafiks tiek attēlots tabulā izvēlētajam mēnesim: rindās darbinieki, kolonnās mēneša dienas, šūnās maiņas sākuma un beigu laiks. Darbinieks redz visas filiāles darbinieku maiņas, bet dienas, kad kolēģis nestrādā brīvdienas vai slimības dēļ, viņam tiek atzīmētas vienādi kā ‘Nestrādā’. Vecākais darbinieks un uzņēmuma administrators redz arī iemeslu (‘Brīvdiena’ vai ‘Slimība’).
+5. **Darbinieku stundu kopsavilkums** (vecākais darbinieks, uzņēmuma administrators). Katram darbiniekam tiek attēlota mēneša stundu norma (darba dienu skaits, reizināts ar 8 stundām un slodzi), grafikā ieplānoto stundu summa un starpība starp tām.
 6. **Ziņojums par stundu trūkumu** (vecākais darbinieks, uzņēmuma administrators). Ja nepieciešamais darbinieku skaits kādā laika intervālā netiek nodrošināts, tiek attēlots datums, laika intervāls, nepieciešamais un ieplānotais darbinieku skaits.
 7. **Aizvietotāju saraksts** (vecākais darbinieks). Pēc slimības lapas iesniegšanas vai brīvdienu apstiprināšanas, tiek attēloti darbinieki, kas attiecīgajā laikā nestrādā, sakārtoti pēc mēnesī ieplānoto stundu skaita augošā secībā.
 8. **Vēlamo brīvdienu pieteikumi** (vecākais darbinieks, darbinieks). Vecākais darbinieks redz filiāles pieteikumu sarakstu: darbinieks, periods, iemesls un statuss (‘Gaida’, ‘Apstiprināts’, ‘Noraidīts’). Darbinieks redz savus pieteikumus ar statusu un noraidīšanas iemeslu. Darbinieks neredz kolēģu pieteikumus un to iemeslus.
@@ -288,7 +289,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 1.2.3.5. Uzņēmuma administratoram jānodrošina iespēja apskatīt sava uzņēmuma datus.
 
-1.2.3.6. Uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja rediģēt uzņēmuma nosaukumu.
+1.2.3.6. Uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja rediģēt uzņēmuma nosaukumu.
 
 1.2.3.7. Uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja dzēst uzņēmumu.
 
@@ -300,17 +301,17 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 ### 1.2.4. Filiāļu pārvaldība
 
-1.2.4.1. Uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja izveidot filiāli, ievadot filiāles nosaukumu un adresi. Sistēmas administratoram jāizvēlas uzņēmums, kuram filiāli pievieno.
+1.2.4.1. Uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja izveidot filiāli, ievadot filiāles nosaukumu un adresi.
 
 1.2.4.2. Izveidojot vai rediģējot filiāli, sistēmai jāpārbauda, ka nosaukums un adrese nav tukši un katrs nepārsniedz 255 rakstzīmes. Ja kāds lauks nav aizpildīts, jāizvada kļūdas paziņojums “Aizpildiet visus obligātos laukus”.
 
 1.2.4.3. Sistēmai jāpārbauda filiāles nosaukuma unikalitāte uzņēmuma ietvaros. Ja filiāle ar šādu nosaukumu jau eksistē, jāizvada kļūdas paziņojums “Filiāle ar šādu nosaukumu šajā uzņēmumā jau eksistē”.
 
-1.2.4.4. Uzņēmuma administratoram un sistēmas administratoram jānodrošina iespēja apskatīt uzņēmuma filiāļu sarakstu, attēlojot katrai filiālei nosaukumu, adresi un darbinieku skaitu.
+1.2.4.4. Uzņēmuma administratoram jānodrošina iespēja apskatīt uzņēmuma filiāļu sarakstu, attēlojot katrai filiālei nosaukumu, adresi un darbinieku skaitu.
 
-1.2.4.5. Uzņēmuma administratoram un sistēmas administratoram jānodrošina iespēja rediģēt filiāles nosaukumu un adresi.
+1.2.4.5. Uzņēmuma administratoram jānodrošina iespēja rediģēt filiāles nosaukumu un adresi.
 
-1.2.4.6. Uzņēmuma administratoram un sistēmas administratoram jānodrošina iespēja dzēst filiāli. Pirms dzēšanas sistēmai jāattēlo brīdinājums ar darbinieku un vecāko darbinieku skaitu, kas tiks izdzēsti, un jāpieprasa paroles ievade apstiprināšanai kā 1.2.3.8. punktā.
+1.2.4.6. Uzņēmuma administratoram jānodrošina iespēja dzēst filiāli. Pirms dzēšanas sistēmai jāattēlo brīdinājums ar darbinieku un vecāko darbinieku skaitu, kas tiks izdzēsti, un jāpieprasa paroles ievade apstiprināšanai kā 1.2.3.8. punktā.
 
 1.2.4.7. Dzēšot filiāli, sistēmai jāizdzēš visi filiāles lietotāji un to sesijas, reģistrācijas saites, grafika iestatījumi, grafika ieraksti, brīvdienu pieteikumi un slimības lapas. Darbību vēstures ieraksti jāsaglabā.
 
@@ -320,9 +321,9 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 1.2.5.1. Sistēmas administratoram jānodrošina iespēja izveidot uzņēmuma administratora reģistrācijas saiti, izvēloties uzņēmumu.
 
-1.2.5.2. Uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja izveidot vecākā darbinieka reģistrācijas saiti, izvēloties filiāli.
+1.2.5.2. Uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja izveidot vecākā darbinieka reģistrācijas saiti, izvēloties filiāli.
 
-1.2.5.3. Vecākajam darbiniekam savā filiālē, uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja izveidot darbinieka reģistrācijas saiti, norādot darbinieka slodzi. Vecākajam darbiniekam filiāle jāpiešķir automātiski, pārējiem tā jāizvēlas.
+1.2.5.3. Vecākajam darbiniekam savā filiālē un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja izveidot darbinieka reģistrācijas saiti, norādot darbinieka slodzi. Vecākajam darbiniekam filiāle jāpiešķir automātiski, uzņēmuma administratoram tā jāizvēlas.
 
 1.2.5.4. Sistēmai jāpārbauda, ka slodze ir reāls skaitlis, kas lielāks par 0 un nav lielāks par 1. Ja slodze nav pareiza, jāizvada kļūdas paziņojums “Slodzei jābūt skaitlim no 0 līdz 1”.
 
@@ -338,7 +339,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 ### 1.2.6. Darbinieku pārvaldība
 
-1.2.6.1. Vecākajam darbiniekam savā filiālē, uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja apskatīt filiāles darbinieku sarakstu, attēlojot katram lietotājam vārdu, uzvārdu, e-pastu, lomu un slodzi (tikai darbiniekiem). Vecākajam darbiniekam filiāle jānosaka automātiski, pārējiem tā jāizvēlas.
+1.2.6.1. Vecākajam darbiniekam savā filiālē un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja apskatīt filiāles darbinieku sarakstu, attēlojot katram lietotājam vārdu, uzvārdu, e-pastu, lomu un slodzi (tikai darbiniekiem). Vecākajam darbiniekam filiāle jānosaka automātiski, uzņēmuma administratoram tā jāizvēlas.
 
 1.2.6.2. Darbinieku sarakstam jābūt sakārtotam pēc uzvārda alfabētiskā secībā.
 
@@ -358,7 +359,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 ### 1.2.7. Filiāles grafika iestatījumu pārvaldība
 
-1.2.7.1. Vecākajam darbiniekam savā filiālē, uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja apskatīt un uzstādīt filiāles grafika iestatījumus. Vecākajam darbiniekam filiāle jānosaka automātiski, pārējiem tā jāizvēlas.
+1.2.7.1. Vecākajam darbiniekam savā filiālē un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja apskatīt un uzstādīt filiāles grafika iestatījumus. Vecākajam darbiniekam filiāle jānosaka automātiski, uzņēmuma administratoram tā jāizvēlas.
 
 1.2.7.2. Katrai nedēļas dienai jānodrošina iespēja norādīt filiāles darba sākumu un beigas formātā HH:MM. Nedēļas diena, kurai darba laiks nav norādīts, tiek uzskatīta par filiāles slēgto dienu, un tajā maiņas netiek plānotas.
 
@@ -385,7 +386,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 ### 1.2.8. Darba grafika ģenerēšana
 
-1.2.8.1. Vecākajam darbiniekam savā filiālē, uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja uzģenerēt filiāles darba grafiku izvēlētajam mēnesim, norādot mēnesi un gadu.
+1.2.8.1. Vecākajam darbiniekam savā filiālē un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja uzģenerēt filiāles darba grafiku izvēlētajam mēnesim, norādot mēnesi un gadu.
 
 1.2.8.2. Grafiku drīkst ģenerēt tekošajam un nākamajiem mēnešiem. Ja izvēlēts agrāks mēnesis, jāizvada kļūdas paziņojums “Nevar ģenerēt grafiku pagājušam mēnesim”.
 
@@ -417,17 +418,17 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 ### 1.2.9. Darba grafika apskate un rediģēšana
 
-1.2.9.1. Darbiniekam, vecākajam darbiniekam savā filiālē, uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja apskatīt filiāles darba grafiku izvēlētajam mēnesim. Uzņēmuma un sistēmas administratoram filiāle jāizvēlas.
+1.2.9.1. Darbiniekam, vecākajam darbiniekam savā filiālē un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja apskatīt filiāles darba grafiku izvēlētajam mēnesim. Uzņēmuma administratoram filiāle jāizvēlas.
 
 1.2.9.2. Grafikam jābūt attēlotam tabulā: rindās darbinieki, kolonnās mēneša dienas, šūnās maiņas sākuma un beigu laiks. Darbinieku rindām jābūt sakārtotām pēc uzvārda alfabētiskā secībā.
 
-1.2.9.3. Dienas, kad darbinieks ir apstiprinātā brīvdienā vai slimības lapā, darbiniekam jāattēlo kā “Nestrādā”. Vecākajam darbiniekam un augstāku lomu lietotājiem šīs dienas jāattēlo ar atzīmi “Brīvdiena” vai “Slimība”.
+1.2.9.3. Dienas, kad darbinieks ir apstiprinātā brīvdienā vai slimības lapā, darbiniekam jāattēlo kā “Nestrādā”. Vecākajam darbiniekam un uzņēmuma administratoram šīs dienas jāattēlo ar atzīmi “Brīvdiena” vai “Slimība”.
 
 1.2.9.4. Ja izvēlētajam mēnesim grafiks nav uzģenerēts, jāattēlo paziņojums “Šim mēnesim grafiks vēl nav izveidots”.
 
-1.2.9.5. Vecākajam darbiniekam un augstāku lomu lietotājiem kopā ar grafiku jāattēlo darbinieku stundu kopsavilkums un ziņojums par stundu trūkumu. Ziņojums jāaprēķina no grafika ierakstiem un iestatījumiem katru reizi, kad grafiks tiek atvērts.
+1.2.9.5. Vecākajam darbiniekam un uzņēmuma administratoram kopā ar grafiku jāattēlo darbinieku stundu kopsavilkums un ziņojums par stundu trūkumu. Ziņojums jāaprēķina no grafika ierakstiem un iestatījumiem katru reizi, kad grafiks tiek atvērts.
 
-1.2.9.6. Vecākajam darbiniekam savā filiālē, uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja rediģēt grafika ierakstus, pievienojot, mainot vai dzēšot atsevišķu darbinieka maiņu izvēlētajā dienā.
+1.2.9.6. Vecākajam darbiniekam savā filiālē un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja rediģēt grafika ierakstus, pievienojot, mainot vai dzēšot atsevišķu darbinieka maiņu izvēlētajā dienā.
 
 1.2.9.7. Rediģēt vai dzēst drīkst tikai ierakstus, kuru datums nav agrāks par šodienas datumu. Mēģinot labot agrāku datumu, jāizvada kļūdas paziņojums “Iepriekšējo periodu grafiku nevar labot”.
 
@@ -442,7 +443,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 1.2.9.9. Ja maiņas pievienošana vai maiņa liek darbinieka ieplānotajām stundām mēnesī pārsniegt mēneša normu, sistēmai jāattēlo brīdinājums “Tiks pārsniegta mēneša norma” un jāļauj lietotājam saglabāt izmaiņas pēc apstiprinājuma.
 
-1.2.9.10. Vecākajam darbiniekam un augstāku lomu lietotājiem jānodrošina iespēja dzēst filiāles grafiku izvēlētajam mēnesim. Dzēšot, sistēmai jāpieprasa apstiprinājums “Vai tiešām dzēst grafiku?” un jāizdzēš ieraksti, sākot ar šodienas datumu, ievērojot 1.2.9.7. punktā noteikto.
+1.2.9.10. Vecākajam darbiniekam un uzņēmuma administratoram jānodrošina iespēja dzēst filiāles grafiku izvēlētajam mēnesim. Dzēšot, sistēmai jāpieprasa apstiprinājums “Vai tiešām dzēst grafiku?” un jāizdzēš ieraksti, sākot ar šodienas datumu, ievērojot 1.2.9.7. punktā noteikto.
 
 1.2.9.11. Pēc katras rediģēšanas vai dzēšanas sistēmai jāpārrēķina stundu kopsavilkums un ziņojums par stundu trūkumu, un jāattēlo atjaunotais grafiks.
 
@@ -467,7 +468,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 1.2.10.4. Darbiniekam jānodrošina iespēja apskatīt savus pieteikumus, attēlojot periodu, iemeslu, statusu un noraidīšanas iemeslu. Pieteikumiem jābūt sakārtotiem pēc sākuma datuma dilstošā secībā.
 
-1.2.10.5. Vecākajam darbiniekam savā filiālē, uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja apskatīt filiāles darbinieku pieteikumus, attēlojot darbinieku, periodu, iemeslu un statusu. Pieteikumiem ar statusu ‘Gaida’ jābūt attēlotiem pirmajiem. Administratoriem filiāle jāizvēlas.
+1.2.10.5. Vecākajam darbiniekam savā filiālē un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja apskatīt filiāles darbinieku pieteikumus, attēlojot darbinieku, periodu, iemeslu un statusu. Pieteikumiem ar statusu ‘Gaida’ jābūt attēlotiem pirmajiem. Uzņēmuma administratoram filiāle jāizvēlas.
 
 1.2.10.6. Šiem lietotājiem jānodrošina iespēja apstiprināt vai noraidīt pieteikumu ar statusu ‘Gaida’. Noraidot, jānodrošina iespēja norādīt iemeslu (līdz 255 rakstzīmēm, nav obligāts).
 
@@ -503,11 +504,11 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 1.2.12.1. Kad maiņa kļūst brīva (slimības lapas iesniegšana vai brīvdienu apstiprināšana), grafika ierakstam jāpiešķir statuss ‘Brīva’ un jānoņem darbinieks, bet maiņas datums un laiks jāsaglabā.
 
-1.2.12.2. Brīvās maiņas jāattēlo grafikā atsevišķā rindā “Brīvās maiņas” tikai vecākajam darbiniekam un augstāku lomu lietotājiem. Darbiniekiem brīvās maiņas nav jāattēlo.
+1.2.12.2. Brīvās maiņas jāattēlo grafikā atsevišķā rindā “Brīvās maiņas” tikai vecākajam darbiniekam un uzņēmuma administratoram. Darbiniekiem brīvās maiņas nav jāattēlo.
 
 1.2.12.3. Brīvās maiņas jāuzskata par neaizpildītām stundu trūkuma ziņojumā un darbinieku stundu kopsavilkumā.
 
-1.2.12.4. Vecākajam darbiniekam savā filiālē, uzņēmuma administratoram savā uzņēmumā un sistēmas administratoram jebkurā uzņēmumā jānodrošina iespēja izvēlēties brīvu maiņu un apskatīt sistēmas ieteiktos aizvietotājus.
+1.2.12.4. Vecākajam darbiniekam savā filiālē un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja izvēlēties brīvu maiņu un apskatīt sistēmas ieteiktos aizvietotājus.
 
 1.2.12.5. Par aizvietotāju kandidātiem jāieteic filiāles darbinieki (nevis vecākie darbinieki), kuri:
 
@@ -549,7 +550,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 1.2.13.6. Vēstures ierakstus nedrīkst mainīt vai dzēst. Tiem jāpaliek arī pēc lietotāja, filiāles vai uzņēmuma dzēšanas.
 
-1.2.13.7. Sistēmas administratoram jebkurā uzņēmumā un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja apskatīt vēstures ierakstus: sistēmas administratoram visus, uzņēmuma administratoram sava uzņēmuma ierakstus. Ieraksti jāsakārto pēc darbības laika dilstošā secībā un jāsadala lapās pa 50 ierakstiem.
+1.2.13.7. Sistēmas administratoram un uzņēmuma administratoram savā uzņēmumā jānodrošina iespēja apskatīt vēstures ierakstus: sistēmas administratoram visus, uzņēmuma administratoram sava uzņēmuma ierakstus. Ieraksti jāsakārto pēc darbības laika dilstošā secībā un jāsadala lapās pa 50 ierakstiem.
 
 1.2.13.8. Šiem lietotājiem jānodrošina iespēja filtrēt vēsturi pēc lietotāja lomas (viena no lomām vai visas) un pēc laika perioda (sākuma un beigu datums). Ja sākuma datums ir vēlāks par beigu datumu, jāizvada kļūdas paziņojums “Sākuma datumam jābūt agrākam vai vienādam ar beigu datumu”.
 
@@ -585,7 +586,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 1.2.15.5. Ja lietotāja sesijas derīguma termiņš ir beidzies, sistēmai jāizvada paziņojums “Sesijas termiņš ir beidzies, pieslēdzieties vēlreiz” un jāpārvirza lietotājs uz autorizācijas skatu.
 
-1.2.15.6. Darbinieka brīvdienu pieteikuma iemesls un slimības fakts jārāda tikai attiecīgās filiāles vecākajam darbiniekam un augstāku lomu lietotājiem. Citiem darbiniekiem grafikā šīs dienas jāattēlo kā “Nestrādā”.
+1.2.15.6. Darbinieka brīvdienu pieteikuma iemesls un slimības fakts jārāda tikai attiecīgās filiāles vecākajam darbiniekam un uzņēmuma administratoram. Citiem darbiniekiem grafikā šīs dienas jāattēlo kā “Nestrādā”.
 
 *3. tabula. Lomu piekļuves apjoms*
 
@@ -593,8 +594,10 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 | --- | --- |
 | Darbinieks | Savas filiāles grafiks (tikai apskate), savi brīvdienu pieteikumi un slimības lapas, savs profils |
 | Vecākais darbinieks | Savas filiāles darbinieki, grafiks, iestatījumi, pieteikumi, aizvietošana un grafika rediģēšanas vēsture, savs profils |
-| Uzņēmuma administrators | Visas sava uzņēmuma filiāles, to dati un darbību vēsture, savs profils |
-| Sistēmas administrators | Visi uzņēmumi un to dati, visa darbību vēsture, savs profils |
+| Uzņēmuma administrators | Vecākā darbinieka tiesības visās sava uzņēmuma filiālēs, filiāļu un uzņēmuma dati, darbību vēsture, savs profils |
+| Sistēmas administrators | Visi uzņēmumi, uzņēmumu izveide un dzēšana, uzņēmuma administratoru uzaicinājumi, visa darbību vēsture, savs profils |
+
+Lomu hierarhija izriet no USE CASE diagrammā attēlotās vispārināšanas: darbinieks, vecākais darbinieks un sistēmas administrators manto reģistrēta lietotāja tiesības, bet uzņēmuma administrators manto vecākā darbinieka tiesības sava uzņēmuma ietvaros. Sistēmas administrators nav uzņēmuma administratora apakšloma.
 
 ### 1.2.16. Datu integritāte un kļūdu apstrāde
 
@@ -659,7 +662,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 **1.3.5. Drošība**: Paroles jāglabā kā jaucējkods ar sāli, izmantojot lēnu paroļu jaukšanas algoritmu (piemēram, bcrypt vai Argon2). Visam datu apmaiņas trafikam jānotiek ar HTTPS. Sesijas identifikatoriem un reģistrācijas un apstiprinājuma saišu kodiem jābūt nejauši ģenerētiem un neuzminamiem, un sesijas sīkdatnēm jābūt atzīmētām ar HttpOnly, Secure un SameSite. Datu bāzes pieprasījumos lietotāja ievadītie dati jānodod kā parametri, nevis jāiekļauj pieprasījuma tekstā, un attēlotie lietotāja dati jāapstrādā tā, lai tie netiktu izpildīti kā kods. Formām, kas maina datus, jābūt aizsargātām pret CSRF.
 
-**1.3.6. Personas datu aizsardzība**: Sistēmai jāglabā tikai nepieciešamie personas dati (vārds, uzvārds, e-pasts). Slimības iemesls un diagnoze netiek glabāti, bet brīvdienu pieteikumu iemesli un slimības fakts ir pieejami tikai vecākajam darbiniekam un augstāku lomu lietotājiem (1.2.15.6. punkts). E-pasta paziņojumi nedrīkst saturēt slimības vai brīvdienu iemeslu.
+**1.3.6. Personas datu aizsardzība**: Sistēmai jāglabā tikai nepieciešamie personas dati (vārds, uzvārds, e-pasts). Slimības iemesls un diagnoze netiek glabāti, bet brīvdienu pieteikumu iemesli un slimības fakts ir pieejami tikai vecākajam darbiniekam un uzņēmuma administratoram (1.2.15.6. punkts). E-pasta paziņojumi nedrīkst saturēt slimības vai brīvdienu iemeslu.
 
 **1.3.7. Uzticamība**: Datu bāzei jāveido rezerves kopija vismaz reizi diennaktī. Neparedzētu kļūdu gadījumā lietotājam jāattēlo vispārīgs paziņojums bez tehniskām detaļām, bet tehniskā informācija jāieraksta sistēmas tehniskajā žurnālā (1.2.16.6. punkts).
 
@@ -671,7 +674,7 @@ Sistēma lietotājam attēlos šādu izejas informāciju.
 
 ## 1.4. Sistēmas lietotāji un to mijiedarbība ar sistēmu
 
-Sistēmā paredzēts nereģistrēts lietotājs un četras reģistrēto lietotāju lomas: **darbinieks, vecākais darbinieks, uzņēmuma administrators un sistēmas administrators**. Visām reģistrēto lietotāju lomām ir kopīgas iespējas, kas aprakstītas 1.4.2. apakšpunktā. Darbinieks tās papildina ar savām iespējām, bet pārējās lomas veido hierarhiju: uzņēmuma administrators manto vecākā darbinieka iespējas, bet sistēmas administrators manto uzņēmuma administratora iespējas. Reģistrācija notiek tikai ar reģistrācijas saitēm: sistēmas administrators izveido saiti uzņēmuma administratoram, uzņēmuma administrators — vecākajam darbiniekam, bet vecākais darbinieks — darbiniekam. Visi reģistrētie lietotāji var pieslēgties sistēmai, ievadot e-pastu un paroli.
+Sistēmā paredzēts nereģistrēts lietotājs un četras reģistrēto lietotāju lomas: **darbinieks, vecākais darbinieks, uzņēmuma administrators un sistēmas administrators**. Visām reģistrēto lietotāju lomām ir kopīgas iespējas, kas aprakstītas 1.4.2. apakšpunktā. Darbinieks, vecākais darbinieks un sistēmas administrators manto reģistrēta lietotāja iespējas un papildina tās ar savām iespējām. Uzņēmuma administrators manto vecākā darbinieka iespējas un veic tās jebkurā sava uzņēmuma filiālē. Sistēmas administrators nav uzņēmuma administratora apakšloma un neveic filiāļu, grafiku vai darbinieku pārvaldības darbības. Reģistrācija notiek tikai ar reģistrācijas saitēm: sistēmas administrators izveido saiti uzņēmuma administratoram, uzņēmuma administrators — vecākajam darbiniekam, bet vecākais darbinieks — darbiniekam. Visi reģistrētie lietotāji var pieslēgties sistēmai, ievadot e-pastu un paroli.
 
 Sistēmas lietotāju lomu mijiedarbība ar sistēmu ir attēlota 1. pielikumā pievienotajā lietošanas gadījumu (USE CASE) diagrammā, kurā parādītas lietotāju lomas, to lietošanas gadījumi un savstarpējās atkarības (include un extend).-
 
@@ -728,15 +731,15 @@ Uzņēmuma administrators nav piesaistīts konkrētai filiālei un nav iekļauts
 
 ### 1.4.6. Sistēmas administratora iespējas
 
-Sistēmas administrators manto uzņēmuma administratora iespējas (skat. 1.4.5. apakšpunktu), bet var tās veikt jebkurā uzņēmumā. Papildus viņš var:
+Sistēmas administrators manto reģistrēta lietotāja iespējas (skat. 1.4.2. apakšpunktu) un papildus var:
 
 - izveidot uzņēmumus;
+- dzēst uzņēmumus;
 - apskatīt visu uzņēmumu sarakstu;
 - izveidot uzņēmuma administratora reģistrācijas saiti;
-- apskatīt visu uzņēmumu darbību vēsturi.
-- apskatīt sava uzņēmuma darbību vēsturi un filtrēt to pēc lietotāja lomas un laika.
+- apskatīt visu uzņēmumu darbību vēsturi un filtrēt to pēc lietotāja lomas un laika.
 
-Sistēmas administrators nav piesaistīts nevienam uzņēmumam.
+Sistēmas administrators nav piesaistīts nevienam uzņēmumam un nav uzņēmuma administratora apakšloma. Viņš neveic filiāļu, darbinieku, grafiku, brīvdienu pieteikumu vai slimības lapu pārvaldības darbības; tās veic uzņēmuma administrators un vecākais darbinieks.
 
 ## 1.5. Datu bāzes plānotais saturs
 
@@ -971,11 +974,11 @@ Darbinieks attēlo rindas darbinieku, kura datos papildus ir darba slodze (daļa
 
 VecākaisDarbinieks attēlo filiāles vadītāju, kurš sastāda grafiku. Klasei nav savu atribūtu, jo tās dati (vārds, e-pasts) tiek mantoti, bet piesaiste filiālei izteikta ar attiecību. Metodes izveidotDarbiniekaSaiti, labotDarbinieku un dzēstDarbinieku nodrošina filiāles darbinieku pārvaldību. UzstādītIestatījumus saglabā filiāles grafika parametrus. ĢenerētGrafiku ir svarīgākā metode: tā sāk grafika sastādīšanu mēnesim. LabotMaiņu ļauj rokas labojumus, apskatītPieteikumus un izskatītPieteikumu nodrošina brīvdienu pieteikumu apstiprināšanu vai noraidīšanu, piešķirtAizvietotāju piešķir brīvu maiņu izvēlētajam aizvietotājam, bet apskatītGrafikaVēsturi parāda grafika labojumu vēsturi.
 
-UzņēmumaAdministrators pārvalda visu uzņēmumu. Metodes izveidotFiliāli, labotFiliāli un dzēstFiliāli pārvalda uzņēmuma filiāles, izveidotVecākāDarbiniekaSaiti nodrošina jaunu vadītāju reģistrāciju, labotUzņēmumu un dzēstUzņēmumu maina vai dzēš uzņēmuma datus (dzēšana prasa paroli), bet apskatītVēsturi ļauj apskatīt sava uzņēmuma darbību vēsturi ar filtru pēc lomas un laika. Papildus uzņēmuma administrators savā uzņēmumā var veikt visas VecākaisDarbinieks darbības jebkurā filiālē.
+UzņēmumaAdministrators pārvalda visu uzņēmumu. Metodes izveidotFiliāli, labotFiliāli un dzēstFiliāli pārvalda uzņēmuma filiāles, izveidotVecākāDarbiniekaSaiti nodrošina jaunu vadītāju reģistrāciju, labotUzņēmumu un dzēstUzņēmumu maina vai dzēš uzņēmuma datus (dzēšana prasa paroli), mainītDarbiniekaFiliāli pārvieto darbinieku vai vecāko darbinieku uz citu filiāli, bet apskatītVēsturi ļauj apskatīt sava uzņēmuma darbību vēsturi ar filtru pēc lomas un laika. Papildus uzņēmuma administrators savā uzņēmumā var veikt visas VecākaisDarbinieks darbības jebkurā filiālē.
 
-SistēmasAdministrators nav piesaistīts nevienam uzņēmumam. Metodes izveidotUzņēmumu un izveidotAdministratoraSaiti ļauj ieviest jaunu uzņēmumu sistēmā, apskatītUzņēmumuSarakstu parāda visus uzņēmumus, mainītDarbiniekaFiliāli maina filiāli darbiniekam vai vecākajām darbiniekam, bet apskatītVēsturi sniedz piekļuvi visai darbību vēsturei.
+SistēmasAdministrators nav piesaistīts nevienam uzņēmumam. Metodes izveidotUzņēmumu un izveidotAdministratoraSaiti ļauj ieviest jaunu uzņēmumu sistēmā, apskatītUzņēmumuSarakstu parāda visus uzņēmumus, dzēstUzņēmumu dzēš uzņēmumu, bet apskatītVēsturi sniedz piekļuvi visai darbību vēsturei. Sistēmas administrators neveic filiāļu, darbinieku vai grafiku pārvaldības darbības, tāpēc tā tiesības aprobežojas ar uzņēmumu līmeni.
 
-Uzņēmuma administratora tiesības veikt zemāku lomu darbības netiek realizētas ar klašu mantošanu. Vecākajam darbiniekam obligāti ir piesaiste filiālei, bet administratoriem tās nav, tāpēc mantošana radītu pretrunu datos. Tā vietā metodes, kas strādā ar grafiku, pieteikumiem un darbiniekiem, pārbauda lietotāja lomu un piekļuves apjomu un atļauj darbību arī augstākai lomai. Tas atbilst USE CASE diagrammā attēlotajai lomu hierarhijai.
+USE CASE diagrammā darbinieks, vecākais darbinieks un sistēmas administrators vispārina reģistrēto lietotāju, bet uzņēmuma administrators vispārina vecāko darbinieku. Tāpēc uzņēmuma administratoram ir visas vecākā darbinieka tiesības jebkurā sava uzņēmuma filiālē, savukārt sistēmas administrators nav uzņēmuma administratora apakšloma un tam nav filiāļu, grafiku vai darbinieku pārvaldības tiesību. Klašu diagrammā šīs atšķirības netiek atkārtotas ar klašu mantošanu: vecākajam darbiniekam obligāti ir piesaiste filiālei, bet uzņēmuma administratoram tās nav, tāpēc visas lomas manto tikai ReģistrētsLietotājs. Tiesības tiek pārbaudītas pēc lietotāja lomas un piekļuves apjoma, un tas atbilst USE CASE diagrammā attēlotajai lomu hierarhijai.
 
 *Organizācijas struktūras klases*
 
@@ -1013,7 +1016,7 @@ EpastaPaziņojums attēlo e-pasta ziņojumu (adresāts, tēma, teksts, notikums)
 
 ### 3.1.2. Klašu savstarpējās attiecības
 
-*Mantošana*. Klases Darbinieks, VecākaisDarbinieks, UzņēmumaAdministrators un SistēmasAdministrators manto abstrakto klasi ReģistrētsLietotājs. Mantošana izvēlēta tāpēc, ka visām lomām ir kopīgs profils un kopīgas funkcijas (autorizācija, profila pārvaldība), un tā ļauj tās aprakstīt vienu reizi. Klase ReģistrētsLietotājs ir abstrakta, jo katrs lietotājs ir konkrētas lomas pārstāvis. Mantošanas bultiņas vērstas uz bāzes klasi.
+*Mantošana*. Klases Darbinieks, VecākaisDarbinieks, UzņēmumaAdministrators un SistēmasAdministrators manto abstrakto klasi ReģistrētsLietotājs. Mantošana izvēlēta tāpēc, ka visām lomām ir kopīgs profils un kopīgas funkcijas (autorizācija, profila pārvaldība), un tā ļauj tās aprakstīt vienu reizi. Klase ReģistrētsLietotājs ir abstrakta, jo katrs lietotājs ir konkrētas lomas pārstāvis. Mantošanas bultiņas vērstas uz bāzes klasi. USE CASE diagrammā uzņēmuma administrators papildus vispārina vecāko darbinieku; klašu diagrammā šī attiecība netiek dublēta, jo lomu tiesības tiek pārbaudītas atsevišķi (skat. 3.1.1. apakšnodaļu).
 
 Kompozīcija. Kompozīcija (aizpildīts rombs) izvēlēta tur, kur daļa ir veseluma strukturāla sastāvdaļa, nevar pastāvēt bez tā un tiek dzēsta kopā ar to.
 
