@@ -52,9 +52,14 @@ Aleksandrs Kļimanovs · Rīga · 2026./2027. m.g.
   - 3.1. Objektorientēts konceptuālais datu modelis
     - 3.1.1. Klašu funkcijas un nozīme sistēmā
     - 3.1.2. Klašu savstarpējās attiecības
+  - 3.2. Entītiju relāciju datu modelis
+    - 3.2.1. Entītijas un to atribūti
+    - 3.2.2. Entītiju savstarpējās relācijas
+    - 3.2.3. Modelēšanas lēmumi un atbilstība sistēmas koncepcijai
 - PIELIKUMI
   - Lietošanas gadījumu (USE CASE) diagramma
-  - UML klašu diagrammā
+  - UML klašu diagramma
+  - Entītiju relāciju (ER) diagramma
 
 # IEVADS
 
@@ -745,38 +750,38 @@ Sistēmas administrators nav piesaistīts nevienam uzņēmumam un nav uzņēmuma
 
 Sistēmas datu bāze tiek veidota kā relāciju datu bāze. Tās plānotais saturs izriet no 1.2. apakšpunktā aprakstītās funkcionalitātes un ir apkopots 1.5. tabulā.
 
-*1.5. tab.. Datu bāzes entītijas*
+*1.5. tab. Datu bāzes entītijas*
 
 | **Entītija** | **Nozīme** | **Galvenie atribūti** |
 | --- | --- | --- |
 | Uzņēmums | klients, kas izmanto sistēmu | nosaukums (unikāls), izveides laiks |
-| Filiāle | uzņēmuma veikals vai struktūrvienība | uzņēmums, nosaukums (unikāls uzņēmuma ietvaros), adrese |
-| Loma | lietotāja lomu klasifikators (4 vērtības) | nosaukums |
-| Lietotājs | persona ar kontu | vārds, uzvārds, e-pasts (unikāls), paroles jaucējkods, loma, uzņēmums (nav norādīts sistēmas administratoram), izveides laiks |
-| Filiāles dalībnieks | lietotāja piesaiste filiālei | lietotājs, filiāle, slodze (tikai darbiniekam) |
-| Sesija | lietotāja pieslēguma sesija | kods, lietotājs, izveides laiks, derīguma termiņš |
+| Filiāle | uzņēmuma veikals vai struktūrvienība | uzņēmums, nosaukums (unikāls uzņēmuma ietvaros), adrese, maksimālais maiņas garums, minimālais atpūtas laiks |
+| Lietotājs | persona ar kontu | vārds, uzvārds, e-pasts (unikāls), paroles jaucējkods, loma, uzņēmums (nav norādīts sistēmas administratoram), filiāle (darbiniekam un vecākajam darbiniekam) un slodze (tikai darbiniekam), izveides laiks |
 | Reģistrācijas saite | vienreizēja saite jauna lietotāja reģistrācijai | kods, loma, uzņēmums vai filiāle, slodze (darbinieka saitei), izveidotājs, izveides laiks, derīguma termiņš, lietošanas statuss |
-| E-pasta maiņas pieprasījums | gaidošs e-pasta maiņas apstiprinājums | lietotājs, jaunais e-pasts, kods, derīguma termiņš |
-| Filiāles darba laiks | filiāles darba laiks pa nedēļas dienām | filiāle, nedēļas diena, sākums, beigas |
-| Nepieciešamā darbinieku skaita intervāls | prasītais darbinieku skaits dienas intervālā | filiāle, nedēļas diena, intervāla sākums, intervāla beigas, darbinieku skaits |
-| Filiāles grafika parametri | vispārējie ierobežojumi | filiāle, maksimālais maiņas garums, minimālais atpūtas laiks |
+| Darba laiks | filiāles darba laiks pa nedēļas dienām | filiāle, nedēļas diena, sākums, beigas |
+| Nodrošinājuma intervāls | prasītais darbinieku skaits dienas intervālā | darba laiks (filiāle, nedēļas diena), intervāla sākums, intervāla beigas, darbinieku skaits |
 | Darba grafiks | filiāles grafiks vienam mēnesim | filiāle, gads, mēnesis, versija, ģenerēšanas laiks |
-| Grafika ieraksts | viena darbinieka maiņa dienā vai brīva maiņa | grafiks, darbinieks (var būt tukšs), darbinieka vārds, datums, sākums, beigas, statuss (‘Plānota’ vai ‘Brīva’) |
+| Maiņa | viena darbinieka maiņa dienā vai brīva maiņa | grafiks, darbinieks (var būt tukšs), darbinieka vārds, datums, sākums, beigas, statuss (‘Plānota’ vai ‘Brīva’) |
 | Brīvdienu pieteikums | darbinieka vēlamās brīvdienas | darbinieks, darbinieka vārds, sākuma un beigu datums, iemesls, statuss, noraidīšanas iemesls, izskatīšanas laiks un lietotājs |
 | Slimības lapa | darbinieka slimības periods | darbinieks, darbinieka vārds, sākuma un beigu datums, iesniegšanas laiks |
-| Darbību vēsture | visu datu izmaiņu žurnāls | lietotājs, vārds, loma, uzņēmums, filiāle, darbības veids, objekta veids, objekts, vecā un jaunā vērtība, laiks |
+| Darbību vēsture | visu datu izmaiņu žurnāls | lietotājs, lietotāja vārds, loma, uzņēmums, uzņēmuma nosaukums, filiāle, filiāles nosaukums, darbības veids, objekta veids, objekta nosaukums, vecā un jaunā vērtība, laiks |
+| Sesija | tehniskā tabula lietotāja pieslēguma sesijai | kods, lietotājs, izveides laiks, derīguma termiņš |
+| E-pasta maiņas pieprasījums | tehniskā tabula gaidošam e-pasta maiņas apstiprinājumam | lietotājs, jaunais e-pasts, kods, derīguma termiņš |
 
 Entītiju savstarpējās saites:
 
 - uzņēmums 1 : N filiāle un 1 : N lietotājs (sistēmas administratoram uzņēmuma nav);
-- loma 1 : N lietotājs;
-- lietotājs 1 : 0..1 filiāles dalībnieks, filiāle 1 : N filiāles dalībnieks;
-- lietotājs 1 : N sesija, lietotājs 1 : N e-pasta maiņas pieprasījums;
-- uzņēmums vai filiāle 1 : N reģistrācijas saite, lietotājs (izveidotājs) 1 : N reģistrācijas saite;
-- filiāle 1 : N darba laiks, 1 : N intervāls un 1 : 1 grafika parametri;
-- filiāle 1 : N darba grafiks, darba grafiks 1 : N grafika ieraksts;
-- darbinieks 0..1 : N grafika ieraksts, darbinieks 0..1 : N brīvdienu pieteikums un 0..1 : N slimības lapa (saite kļūst tukša pēc darbinieka dzēšanas, bet vārds paliek ierakstā);
+- filiāle 1 : N lietotājs (darbinieks vai vecākais darbinieks; saitei ir atribūts slodze, kas attiecas tikai uz darbinieku);
+- lietotājs 1 : N reģistrācijas saite (izveidotājs), uzņēmums 0..1 : N reģistrācijas saite un filiāle 0..1 : N reģistrācijas saite (saite attiecas uz vienu no tiem);
+- filiāle 1 : N darba laiks, darba laiks 1 : N nodrošinājuma intervāls; maksimālais maiņas garums un minimālais atpūtas laiks ir filiāles atribūti;
+- filiāle 1 : N darba grafiks, darba grafiks 1 : N maiņa;
+- lietotājs 0..1 : N maiņa (brīvai maiņai darbinieks nav norādīts);
+- lietotājs 1 : N brīvdienu pieteikums (iesniedzējs) un 0..1 : N brīvdienu pieteikums (izskatītājs);
+- lietotājs 1 : N slimības lapa;
+- lietotājs 0..1 : N darbību vēsture, uzņēmums 0..1 : N darbību vēsture un filiāle 0..1 : N darbību vēsture; vēstures ieraksti saglabā arī lietotāja vārdu, lomu, uzņēmuma un filiāles nosaukumu;
 - darbību vēsture ir saistīta ar uzņēmumiem, filiālēm un lietotājiem tikai pēc identifikatoriem, bez atsauču integritātes ierobežojuma, lai ieraksti saglabātos pēc dzēšanas (1.2.13.6. punkts).
+
+1.5. tabulā iekļautas arī divas tehniskās tabulas — Sesija un E-pasta maiņas pieprasījums. Tās nav iekļautas konceptuālajā ER modelī, jo neattiecas uz priekšmeta jomu, un tiek pievienotas loģiskajā datu modelī. Tāpat ER diagrammā nav attēloti tehniskie lauki (identifikatori, ārējās atslēgas, izveides un ģenerēšanas laiki, grafika versija), kas tiek ieviesti loģiskajā modelī.
 
 Integritātes ierobežojumi ir noteikti 1.2.16.4.–1.2.16.5. punktā.
 
@@ -1043,6 +1048,86 @@ Kompozīcija. Kompozīcija (aizpildīts rombs) izvēlēta tur, kur daļa ir vese
 
 Visas diagrammā attēlotās attiecības izriet no sistēmas funkcionalitātes, lietotāju lomām un USE CASE diagrammas, un diagrammā nav neizmantotu vai nepamatotu attiecību.
 
+## 3.2. Entītiju relāciju datu modelis
+
+Konceptuālais datu modelis izstrādāts Pītera Čena (Peter Chen) notācijā. ER diagramma attēlota 3. pielikumā un ir pieejama arī drawio failā `diagrams/er_diagramm.drawio`. Diagrammā lietoti šādi apzīmējumi: taisnstūris apzīmē entītiju, dubultais taisnstūris – vājo entītiju, elipse – atribūtu, pasvītrots atribūts ir identificējošais atribūts, atribūts ar pārtrauktu pasvītru ir vājās entītijas daļējā atslēga, rombs apzīmē relāciju, bet dubultais rombs – identificējošo relāciju. Kardinalitātes diagrammā norādītas ar `1` un `M`; neobligātās saites un minimālās kardinalitātes skaidrotas tekstā.
+
+ER modelī iekļautas 11 entītijas: Uzņēmums, Filiāle, Lietotājs, Darba laiks, Nodrošinājuma intervāls, Darba grafiks, Maiņa, Brīvdienu pieteikums, Slimības lapa, Reģistrācijas saite un Darbību vēsture. Modelī apzināti nav iekļautas tehniskās entītijas Sesija un E-pasta maiņas pieprasījums, kā arī tehniskie lauki (identifikatori, ārējās atslēgas, izveides laiki, grafika versija), jo tie pieder loģiskajam datu modelim. Loma un filiāles dalība nav atsevišķas entītijas: loma ir lietotāja atribūts, bet filiāles dalība – relācija “strādā” ar atribūtu Slodze.
+
+### 3.2.1. Entītijas un to atribūti
+
+**Uzņēmums.** Uzņēmums ir sistēmas klients, kuram pieder filiāles, lietotāji un ar tiem saistītie dati. Entītijas identificējošais atribūts ir `Nosaukums`, kas sistēmā ir unikāls. Uzņēmums nepieciešams, lai nodalītu dažādu klientu datus un nodrošinātu piekļuves apjomu katram uzņēmumam atsevišķi.
+
+**Filiāle.** Filiāle ir vājā entītija, jo tās nosaukums ir unikāls tikai konkrētā uzņēmuma ietvaros. Daļējā atslēga ir `Nosaukums`, bet pilnu identitāti veido īpašnieks `Uzņēmums` kopā ar šo nosaukumu. Filiāle glabā `Adresi`, `Maksimālo maiņas garumu` un `Minimālo atpūtas laiku`; šie divi pēdējie atribūti ir vispārējie grafika ierobežojumi, kas attiecas uz visiem filiāles mēnešiem. Filiāle ir sistēmas centrālā struktūrvienība, jo tai pieder darba laiks, nodrošinājuma intervāli, darba grafiki un filiāles lietotāji.
+
+**Lietotājs.** Lietotājs ir persona ar kontu sistēmā. Identificējošais atribūts ir `E-pasts`, kas ir unikāls visā sistēmā. Entītija glabā `Vārdu`, `Uzvārdu`, `Paroles jaucējkodu` un `Lomu`. Loma ir atribūts, nevis atsevišķa entītija, jo tā ir fiksēts klasifikators ar četrām vērtībām un tai nav savas neatkarīgas datu struktūras. Piesaiste uzņēmumam un filiālei attēlota ar relācijām, bet darbinieka slodze – kā relācijas “strādā” atribūts.
+
+**Darba laiks.** Darba laiks ir vājā entītija, kas pieder filiālei. Daļējā atslēga ir `Nedēļas diena`, jo vienai filiālei katrā nedēļas dienā var būt ne vairāk kā viens darba laika ieraksts. Entītija glabā `Sākumu` un `Beigas`; diena, kurai ieraksta nav, tiek uzskatīta par filiāles slēgto dienu. Darba laiks nepieciešams, lai pārbaudītu, vai maiņa un nodrošinājuma intervāls atrodas filiāles darba laikā.
+
+**Nodrošinājuma intervāls.** Nodrošinājuma intervāls ir vājā entītija, kas pieder konkrētam darba laika ierakstam. Daļējā atslēga ir `Intervāla sākums`, jo vienas dienas intervāli nedrīkst pārklāties, tāpēc sākuma laiks ir unikāls konkrētajā darba dienā. Entītija glabā `Intervāla beigas` un `Darbinieku skaitu`. Intervāli nosaka, cik darbinieku katrā dienas daļā jāieplāno, un ir pamats stundu trūkuma aprēķinam.
+
+**Darba grafiks.** Darba grafiks ir vājā entītija, kas pieder filiālei. Daļējā atslēga ir `Gads` un `Mēnesis`: vienai filiālei vienā mēnesī var būt viens grafiks. Entītijai nav citu biznesa atribūtu; grafika versija un ģenerēšanas laiks ir tehniskie lauki, kas tiek pievienoti loģiskajā modelī un ER diagrammā nav attēloti. Grafiks nepieciešams, lai apvienotu viena mēneša maiņas un atbalstītu vienlaicīgas izmaiņas.
+
+**Maiņa.** Maiņa ir vājā entītija, kas pieder darba grafikam. Daļējā atslēga ir `Datums`, `Sākums` un `Beigas`; pilnu identitāti nosaka grafiks, laiks un piešķirtais darbinieks, bet brīvajai maiņai darbinieks nav norādīts. Entītija glabā `Statusu` (‘Plānota’ vai ‘Brīva’) un `Darbinieka vārdu`, kas saglabā ieraksta vēsturisko piederību arī pēc lietotāja dzēšanas. Maiņa ir galvenais grafika ieraksts: tā glabā konkrēto darba laiku, atbalsta brīvās maiņas un aizvietošanu.
+
+**Brīvdienu pieteikums.** Brīvdienu pieteikums ir vājā entītija, kas pieder lietotājam, kurš to iesniedz. Daļējā atslēga ir `Sākuma datums`, jo viena lietotāja periodi nedrīkst pārklāties. Entītija glabā `Beigu datumu`, `Iemeslu`, `Statusu` (‘Gaida’, ‘Apstiprināts’, ‘Noraidīts’), `Noraidīšanas iemeslu`, `Izskatīšanas laiku` un `Darbinieka vārdu`. Pieteikums nepieciešams, lai darbinieks varētu pieteikt vēlamās brīvdienas, bet vecākais darbinieks vai administrators – tās apstiprināt vai noraidīt; izskatītājs attēlots kā atsevišķa neobligāta relācija. `Iemesls` tiek glabāts tikai pieteikumā un netiek iekļauts darbību vēsturē vai e-pasta paziņojumos.
+
+**Slimības lapa.** Slimības lapa ir vājā entītija, kas pieder lietotājam. Daļējā atslēga ir `Sākuma datums`, jo slimības periodi vienam lietotājam nepārklājas. Entītija glabā `Beigu datumu`, `Iesniegšanas laiku` un `Darbinieka vārdu`. Slimības lapa tiek pieņemta kā fakts bez apstiprināšanas, un slimības iemesls vai diagnoze sistēmā netiek glabāta. Tā nepieciešama, lai slimības periodā atbrīvotu darbinieka maiņas un neplānotu viņu grafikā.
+
+**Reģistrācijas saite.** Reģistrācijas saite ir patstāvīga entītija, kuras identificējošais atribūts ir `Kods` – nejauši ģenerēts un unikāls saites kods. Entītija glabā `Lomu`, `Slodzi` (tikai darbinieka saitei), `Derīguma termiņu` un `Statusu`. Saite nepieciešama, jo reģistrācija sistēmā ir iespējama tikai pēc uzaicinājuma; tā nosaka jaunā lietotāja lomu un piesaistes apjomu. `Kods` nav tehniskā primārās atslēgas aizstājējs, bet gan lietotājam nododamais unikālais saites kods, tāpēc tas ir būtisks priekšmeta jomas atribūts. Izveidotājs un mērķa uzņēmums vai filiāle attēloti ar relācijām.
+
+**Darbību vēsture.** Darbību vēsture ir patstāvīga entītija, kas glabā audita ierakstus. Tās identificējošā atribūtu kopa ir `Laiks`, `Darbības veids`, `Objekta nosaukums` un `Lietotāja vārds`; pārējie atribūti ir `Objekta veids`, `Vecā vērtība`, `Jaunā vērtība`, `Loma`, `Uzņēmuma nosaukums` un `Filiāles nosaukums`. Ieraksts saglabā darbības brīža vārdu, lomu, uzņēmuma un filiāles nosaukumu, tāpēc tas paliek lasāms arī pēc lietotāja, uzņēmuma vai filiāles dzēšanas. Vēsture nepieciešama, lai nodrošinātu izsekojamību, grafika labojumu vēsturi un piekļuves kontroli atbilstoši lietotāja lomai.
+
+### 3.2.2. Entītiju savstarpējās relācijas
+
+**Uzņēmums – satur – Filiāle (1 : M, identificējošā).** Viens uzņēmums satur vienu vai vairākas filiāles. Katra filiāle pieder tieši vienam uzņēmumam un bez tā nevar pastāvēt, tāpēc šī ir identificējošā relācija un Filiāle ir vājā entītija.
+
+**Uzņēmums – pieder – Lietotājs (1 : M).** Viens uzņēmums var būt piesaistīts vienam vai vairākiem lietotājiem. Katrs lietotājs, izņemot sistēmas administratoru, pieder tieši vienam uzņēmumam; sistēmas administratoram uzņēmums nav norādīts.
+
+**Filiāle – strādā – Lietotājs (1 : M, ar atribūtu Slodze).** Viena filiāle nodarbina vienu vai vairākus lietotājus. Katrs darbinieks vai vecākais darbinieks strādā tieši vienā filiālē, bet uzņēmuma administrators un sistēmas administrators filiālei nav piesaistīti. Relācijas atribūts `Slodze` attiecas tikai uz darbinieku un norāda viņa darba laika daļu.
+
+**Filiāle – nosaka – Darba laiks (1 : M, identificējošā).** Viena filiāle nosaka vienu vai vairākus darba laika ierakstus. Katrs darba laika ieraksts pieder tieši vienai filiālei un bez tās nevar pastāvēt.
+
+**Darba laiks – ietver – Nodrošinājuma intervāls (1 : M, identificējošā).** Viens darba laika ieraksts ietver vienu vai vairākus nodrošinājuma intervālus. Katrs nodrošinājuma intervāls pieder tieši vienam darba laika ierakstam un bez tā nevar pastāvēt.
+
+**Filiāle – sastāda – Darba grafiks (1 : M, identificējošā).** Viena filiāle sastāda vienu vai vairākus mēneša grafikus. Katrs darba grafiks pieder tieši vienai filiālei un attiecas uz vienu gadu un mēnesi.
+
+**Darba grafiks – satur – Maiņa (1 : M, identificējošā).** Viens darba grafiks satur vienu vai vairākas maiņas. Katra maiņa pieder tieši vienam darba grafikam un bez tā nevar pastāvēt.
+
+**Lietotājs – veic – Maiņa (1 : M, neobligāta).** Viens lietotājs var veikt vienu vai vairākas maiņas. Katra maiņa var būt piesaistīta vienam lietotājam vai arī būt brīva; brīvajai maiņai lietotājs nav norādīts, tāpēc saite ir neobligāta.
+
+**Lietotājs – iesniedz – Brīvdienu pieteikums (1 : M, identificējošā).** Viens lietotājs iesniedz vienu vai vairākus brīvdienu pieteikumus. Katrs brīvdienu pieteikums pieder tieši vienam iesniedzējam un bez tā nevar pastāvēt.
+
+**Lietotājs – izskata – Brīvdienu pieteikums (1 : M, neobligāta).** Viens lietotājs var izskatīt vienu vai vairākus brīvdienu pieteikumus. Katrs pieteikums var būt izskatīts tikai vienu reizi; pirms izskatīšanas izskatītājs nav norādīts, tāpēc saite ir neobligāta.
+
+**Lietotājs – iesniedz – Slimības lapa (1 : M, identificējošā).** Viens lietotājs iesniedz vienu vai vairākas slimības lapas. Katra slimības lapa pieder tieši vienam lietotājam un bez tā nevar pastāvēt.
+
+**Lietotājs – izveido – Reģistrācijas saite (1 : M).** Viens lietotājs izveido vienu vai vairākas reģistrācijas saites. Katra reģistrācijas saite ir izveidota tieši vienam lietotājam, kurš ir tās autors.
+
+**Uzņēmums – uzaicina – Reģistrācijas saite (1 : M, neobligāta).** Viens uzņēmums var būt norādīts vienā vai vairākās reģistrācijas saitēs. Katra uzņēmuma administratora saite attiecas tieši uz vienu uzņēmumu; darbinieka un vecākā darbinieka saitei uzņēmums nav norādīts.
+
+**Filiāle – uzaicina – Reģistrācijas saite (1 : M, neobligāta).** Viena filiāle var būt norādīta vienā vai vairākās reģistrācijas saitēs. Katra darbinieka vai vecākā darbinieka saite attiecas tieši uz vienu filiāli; uzņēmuma administratora saitei filiāle nav norādīta.
+
+**Lietotājs – veic – Darbību vēsture (1 : M, neobligāta).** Viens lietotājs var veikt vienu vai vairākas darbības, kas tiek ierakstītas vēsturē. Katrs vēstures ieraksts var būt saistīts ar vienu lietotāju; pēc lietotāja dzēšanas ieraksts saglabā lietotāja vārdu un lomu.
+
+**Uzņēmums – attiecas – Darbību vēsture (1 : M, neobligāta).** Viens uzņēmums var būt saistīts ar vienu vai vairākiem vēstures ierakstiem. Katrs vēstures ieraksts var attiekties uz vienu uzņēmumu; pēc uzņēmuma dzēšanas ieraksts saglabā uzņēmuma nosaukumu.
+
+**Filiāle – attiecas – Darbību vēsture (1 : M, neobligāta).** Viena filiāle var būt saistīta ar vienu vai vairākiem vēstures ierakstiem. Katrs vēstures ieraksts var attiekties uz vienu filiāli; pēc filiāles dzēšanas ieraksts saglabā filiāles nosaukumu.
+
+### 3.2.3. Modelēšanas lēmumi un atbilstība sistēmas koncepcijai
+
+ER modelī izmantotas septiņas vājās entītijas: Filiāle, Darba laiks, Nodrošinājuma intervāls, Darba grafiks, Maiņa, Brīvdienu pieteikums un Slimības lapa. To identitāti nosaka īpašnieks kopā ar daļējo atslēgu: filiāles nosaukums ir unikāls tikai uzņēmuma ietvaros, nedēļas diena – tikai filiāles ietvaros, intervāla sākums – tikai darba dienas ietvaros, gads un mēnesis – tikai filiāles ietvaros, bet pieteikuma un slimības lapas sākuma datums – tikai lietotāja ietvaros. Šāds risinājums atbilst Pītera Čena notācijai un ļauj izvairīties no mākslīgiem tehniskajiem identifikatoriem konceptuālajā modelī.
+
+Modelī nav daudz-pret-daudziem (M : N) relāciju, jo sistēmas koncepcija nosaka, ka lietotājs pieder vienam uzņēmumam un ne vairāk kā vienai filiālei, grafiks pieder vienai filiālei, bet maiņa – vienam grafikam. Ja nākotnē lietotājs varētu strādāt vairākās filiālēs, relācija “strādā” kļūtu M : N un tās atribūts `Slodze` paliktu uz starpentītijas; pašlaik šāda nepieciešamība sistēmas koncepcijā nav paredzēta.
+
+Atribūti `Darbinieka vārds` (Maiņa, Brīvdienu pieteikums, Slimības lapa) un `Lietotāja vārds`, `Loma`, `Uzņēmuma nosaukums`, `Filiāles nosaukums` (Darbību vēsture) ir apzināta denormalizācija. Tie nav lieki: tie saglabā vēsturisko informāciju pēc lietotāja, uzņēmuma vai filiāles dzēšanas, kā noteikts 1.2.2.11., 1.2.3.9., 1.2.4.7. un 1.2.13.6. punktā. Tāpēc ER modelī tie attēloti kā entītiju atribūti, bet loģiskajā modelī paliek kā snapshot lauki.
+
+Loma nav modelēta kā atsevišķa entītija, jo tā ir fiksēts klasifikators ar četrām vērtībām un tai nav savas neatkarīgas datu struktūras; tā attēlota kā `Lietotāja` atribūts. Filiāles dalībnieks nav atsevišķa entītija, jo tā ir saite starp lietotāju un filiāli ar vienu atribūtu `Slodze`; tā attēlota kā relācija “strādā”. Sesija un E-pasta maiņas pieprasījums ir tehniskas tabulas, kas neattiecas uz priekšmeta jomu, tāpēc ER diagrammā nav iekļautas; tās tiek pievienotas loģiskajā datu modelī.
+
+Salīdzinot ar 3.1. apakšnodaļas UML modeli, ER modelī lietotāju lomas netiek izteiktas ar mantojumu, jo ER modelis apraksta datu struktūru, nevis objektu uzvedību; tāpēc loma ir `Lietotāja` atribūts. Tāpat `FiliālesIestatījumi`, kas UML modelī ir atsevišķa klase, ER modelī nav atsevišķa entītija: maksimālais maiņas garums un minimālais atpūtas laiks ir `Filiāles` atribūti, jo tiem ir 1 : 1 saite ar filiāli un nav savas identitātes. `EpastaPaziņojums` ER modelī nav iekļauts, jo e-pasta paziņojumi netiek glabāti datu bāzē.
+
+Visas diagrammā attēlotās entītijas, atribūti, relācijas un kardinalitātes atbilst šajā apakšnodaļā sniegtajam aprakstam. Diagrammā nav attēlotas procesu vai lietotāju darbību secības, jo ER modelis apraksta tikai sistēmā glabājamos datus un to savstarpējās saites.
+
 # PIELIKUMI
 
 1.pielikums
@@ -1053,6 +1138,12 @@ Visas diagrammā attēlotās attiecības izriet no sistēmas funkcionalitātes, 
 
 2.pielikums
 
-## UML klašu diagrammā
+## UML klašu diagramma
 
 ![image](media/image3.png)
+
+3.pielikums
+
+## Entītiju relāciju (ER) diagramma
+
+ER diagramma Pītera Čena notācijā ir sagatavota drawio formātā un pieejama failā [`diagrams/er_diagramm.drawio`](diagrams/er_diagramm.drawio). To var atvērt ar draw.io (diagrams.net). Diagrammā lietoti šādi apzīmējumi: taisnstūris – entītija, dubultais taisnstūris – vājā entītija, elipse – atribūts, pasvītrots atribūts – identificējošais atribūts, pārtraukta pasvītra – vājās entītijas daļējā atslēga, rombs – relācija, dubultais rombs – identificējošā relācija, `1` un `M` – kardinalitāte. Diagrammas tekstuālais apraksts sniegts 3.2. apakšnodaļā.

@@ -90,16 +90,11 @@ best-effort and must not block or roll back the action.
 
 ## Commands
 
-Go is installed but **not on PATH** in the bash tool on this machine:
+Go is installed and available as `go` (`~/.local/bin/go`). `gofmt` may not be
+on `PATH`; use `go fmt` instead.
 
 ```bash
-export PATH="/c/Program Files/Go/bin:$PATH"
-```
-
-Then:
-
-```bash
-gofmt -l .                 # should be empty
+go fmt ./...               # prints changed files; no output means formatted
 go build ./...
 go vet ./...
 go test ./...
@@ -114,6 +109,20 @@ DB_URI=/tmp/dev.db PORT=3999 ADMIN_EMAIL=root ADMIN_PASSWORD=root go run ./cmd/s
 
 `.env` is optional (`godotenv.Load`); `DB_URI` is the only required variable.
 Default admin credentials are `root`/`root` and are logged at startup.
+
+## Diagram tooling
+
+`drawio` (AppImage), `xvfb-run`, `xmllint`, ImageMagick and `rsvg-convert` are
+installed. Render a drawio file to PNG for visual inspection:
+
+```bash
+mkdir -p /tmp/diagrams
+xvfb-run -a drawio --no-sandbox --export --format png \
+  --output /tmp/diagrams/er.png docs/diagrams/er_diagramm.drawio
+```
+
+Use `--format svg` or `--format pdf` instead of `png` when needed. Validate the
+XML with `xmllint --noout docs/diagrams/er_diagramm.drawio`.
 
 ## Layout
 
@@ -136,7 +145,7 @@ internal/web/static/           bulma.min.css, htmx.min.js (embedded)
 docs/documentation.md          thesis draft (converted from .docx)
 docs/documentation_requirements.md  supervisor requirements (converted from .pdf)
 docs/media/                    images extracted during conversion
-docs/diagrams/                 uml_diagramm.drawio, usecase_diagramm.drawio
+docs/diagrams/                 uml_diagramm.drawio, usecase_diagramm.drawio, er_diagramm.drawio
 ```
 
 Request flow: `main` → `config.Load` → `store.Open` (runs migrations) →
@@ -210,10 +219,10 @@ pages and `render` for HTMX fragments. Cookies are `Secure` only on HTTPS (or
 Sources (keep the originals; the Markdown files are regenerable):
 
 - `docs/documentation.docx` → `docs/documentation.md` — the thesis draft:
-  chapters 1–3 (task statement, requirements, SWOT, OO data model) and
-  appendices 1–2. This is the requirement source for behaviour and naming.
-  The draft currently stops at §3.1 (OO conceptual model); the ER model, table
-  structure and realisation/testing chapters are still to be written.
+  chapters 1–3 (task statement, requirements, SWOT, OO data model, ER model)
+  and appendices 1–3. This is the requirement source for behaviour and naming.
+  The draft currently stops at §3.2 (ER model); table structure and
+  realisation/testing chapters are still to be written.
 - `docs/documentation_requirements.pdf` → `docs/documentation_requirements.md`
   — supervisor's methodology: required thesis structure, content of every
   section, and acceptance rules. Note: the PDF starts at printed page 6, so
@@ -225,6 +234,12 @@ Sources (keep the originals; the Markdown files are regenerable):
   outside; independent goals are separate use cases with plain associations
   (not «extend»); only optional behaviour uses «extend»; mandatory behaviour
   uses «include»; actor generalization is a solid line with a hollow triangle.
+- `docs/diagrams/er_diagramm.drawio` — ER diagram (appendix 3), Peter Chen
+  notation. Keep it consistent with `docs/documentation.md` §3.2: rectangle =
+  entity, double rectangle = weak entity, ellipse = attribute, underlined =
+  identifier, dashed underline = partial key, diamond = relationship, double
+  diamond = identifying relationship, `1`/`M` = cardinality. Do not add
+  technical fields (IDs, FKs, timestamps, version).
 
 What the methodology expects, in short: Titullapa, Saturs, Ievads, Uzdevuma
 nostādne (input/output data, functional requirements FR x.y.z, non-functional
@@ -239,17 +254,19 @@ and tests.
 
 Converting new material:
 
-- `.docx`: `unzip -o file.docx -d /tmp/docx`, then read headings/styles from
-  `word/document.xml` (`Heading1`–`Heading3`, `w:numPr` for lists, `w:tbl` for
-  tables); images are in `word/media/`. A small Node script is enough; Node is
-  available, Python is not (only the Windows Store stub).
+- `.docx`: `pandoc -f docx -t markdown file.docx -o out.md` is the quick path.
+  For heading/style fidelity, `unzip -o file.docx -d /tmp/docx`, then read
+  headings/styles from `word/document.xml` (`Heading1`–`Heading3`, `w:numPr`
+  for lists, `w:tbl` for tables); images are in `word/media/`. Python 3, Node,
+  `lxml` and Pillow are available for small conversion scripts.
 - `.pdf`: use poppler's `pdftotext -enc UTF-8 -layout file.pdf out.txt`. UTF-8
   must be requested explicitly, otherwise Latvian diacritics are dropped.
   `-layout` keeps reading order (default mode and `-raw` scramble text boxes).
-  Convert to Markdown next to the source; tables/code samples in this material
-  end up as `text` fenced blocks, which is intentional.
-- `pandoc` is not installed. Put converted Markdown next to the source under
-  `docs/` and mention the source file in its header.
+  Use `pdftoppm` if page images are needed for visual inspection. Convert to
+  Markdown next to the source; tables/code samples in this material end up as
+  `text` fenced blocks, which is intentional.
+- `pandoc` is installed. Put converted Markdown next to the source under `docs/`
+  and mention the source file in its header.
 - Thesis text is Latvian; keep Latvian terms (Filiāle, Darbinieks, Vecākais
   darbinieks, Uzņēmums, Slodze, Maiņa, Grafiks, Darbību vēsture,
   Reģistrācijas saite) when discussing requirements, but keep Go identifiers
